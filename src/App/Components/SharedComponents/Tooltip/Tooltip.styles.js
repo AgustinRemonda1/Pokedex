@@ -15,6 +15,7 @@ export const TooltipBox = styled.div`
   padding: 5px 5px;
   border-radius: 4px;
   text-align: center;
+  font-size: 1rem;
 
   transition: visibility 0.5s, color 0.5s, background-color 0.5s, width 0.5s,
     padding 0.5s ease-in-out;

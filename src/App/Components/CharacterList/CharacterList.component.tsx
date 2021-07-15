@@ -11,6 +11,7 @@ const CharacterList = () => {
     []
   );
   const [activePokemonImage, setActivePokemonImage] = useState<string>("");
+  const [pokemonSelected, setPokemonSelected] = useState<any>();
 
   useEffect(() => {
     const fetchPokemonList = async () => {
@@ -36,11 +37,19 @@ const CharacterList = () => {
     }
   };
 
+  const handleShowDetails = (index: number) => {
+    const pokemon = pokemonListWithDetails[index];
+    setPokemonSelected(pokemon);
+  };
+
   return (
     <CharacterListContent
       pokemonList={pokemonList}
+      pokemonSelected={pokemonSelected}
+      setPokemonSelected={setPokemonSelected}
       pokemonListWithDetails={pokemonListWithDetails}
       handleSelectActiveImage={handleSelectActiveImage}
+      handleShowDetails={handleShowDetails}
       activePokemonImage={activePokemonImage}
       page={page}
       setPage={setPage}

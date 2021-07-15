@@ -3,6 +3,7 @@ import { TableRowTypes } from "./Table.config";
 import { Table } from "./Table.styles";
 import { formatPokemonNumber } from "./Table.utils";
 import Button from "../Button/Button.component";
+import { capitalizeStrings } from "../../../Utils/FormatStrings.utils";
 
 interface TableProps {
   config: any[];
@@ -11,14 +12,14 @@ interface TableProps {
 }
 
 const TableComponent = ({ config, dataset, onHover }: TableProps) => {
-  const renderButton = (row: any, column: any, index: number) => {
+  const renderButton = (column: any, index: number, pokemonIndex: number) => {
     return (
       <td key={index}>
         <Button
           icon={column.icon}
           text={column.name}
           action={column.onClick}
-          value={row[column.property]}
+          value={pokemonIndex}
         />
       </td>
     );
@@ -29,11 +30,11 @@ const TableComponent = ({ config, dataset, onHover }: TableProps) => {
 
     return config.map((column, index) =>
       column.isAction ? (
-        renderButton(row, column, index)
+        renderButton(column, index, pokemonIndex)
       ) : column.property === TableRowTypes.index ? (
         <td key={index}>{formatPokemonNumber(pokemonNumber)}</td>
       ) : (
-        <td key={index}>{row[column.property]}</td>
+        <td key={index}>{capitalizeStrings(row[column.property])}</td>
       )
     );
   };

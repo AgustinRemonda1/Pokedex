@@ -1,7 +1,7 @@
 import PokeballIcon from "../../Assets/pokeball.svg";
 
 export const generateConfigWithLang = (configParams: any) => {
-  const { language } = configParams;
+  const { language, handleShowDetails } = configParams;
 
   return [
     {
@@ -14,11 +14,10 @@ export const generateConfigWithLang = (configParams: any) => {
     },
     {
       name: language.details,
-      property: "url",
       isAction: true,
       icon: PokeballIcon,
-      onClick: (url: any) => {
-        console.log(url);
+      onClick: (index: number) => {
+        handleShowDetails(index);
       },
     },
   ];

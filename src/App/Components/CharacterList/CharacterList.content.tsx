@@ -14,15 +14,23 @@ import {
 import Table from "../SharedComponents/Table/Table.component";
 import { LanguageContext } from "../../Config/Lang/Lang.language";
 import { generateConfigWithLang } from "./CharacterList.config";
+import PokemonDetails from "../PokemonDetails/PokemonDetails.component";
 
 const CharacterListContent = ({
   pokemonList,
   handleSelectActiveImage,
   activePokemonImage,
+  handleShowDetails,
+  pokemonSelected,
+  setPokemonSelected,
 }: CharacterListContentProps) => {
   const { language } = useContext(LanguageContext);
+  const configParams = {
+    handleShowDetails,
+    language,
+  };
 
-  return (
+  return !pokemonSelected ? (
     <CharacterListContainer>
       <Header>
         <PokedexTitle>{language.pokedex}</PokedexTitle>
@@ -38,12 +46,17 @@ const CharacterListContent = ({
           <Table
             onHover={handleSelectActiveImage}
             dataset={pokemonList}
-            config={generateConfigWithLang({ language })}
+            config={generateConfigWithLang(configParams)}
           />
         </ListContainer>
       </CharacterListGrid>
       <SideGradientLayout />
     </CharacterListContainer>
+  ) : (
+    <PokemonDetails
+      pokemonSelected={pokemonSelected}
+      setPokemonSelected={setPokemonSelected}
+    />
   );
 };
 

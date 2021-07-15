@@ -5,7 +5,8 @@ export const Table = styled.table`
   border: none;
   border-collapse: collapse;
   width: 75%;
-  color: #ffffff;
+  color: #330000;
+  font-size: 1.5rem;
 
   caption-side: bottom;
   td,
@@ -30,6 +31,7 @@ export const Table = styled.table`
   }
   tbody tr {
     :hover {
+      color: #ffffff;
       background: linear-gradient(
         120deg,
         rgba(255, 102, 0, 1) 47%,
