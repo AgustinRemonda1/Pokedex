@@ -1,22 +1,31 @@
 import React, { useState, useEffect } from "react";
-import CharacterListContent from "./CharacterList.content";
-import { getPokemonList } from "./CharacterList.service";
-import { PokemonInterface } from "./CharacterList.interfaces";
-import { buildPokemonDetailsList } from "./CharacterList.utils";
+import PokemonListContent from "./PokemonList.content";
+import { getPokemonList } from "./PokemonList.service";
+import {
+  PokemonInterface,
+  PokemonWithDetailsInterface,
+} from "../../Interfaces/Pokemon.interface";
+import { buildPokemonDetailsList } from "./PokemonList.utils";
 
-const CharacterList = () => {
+const PokemonList = () => {
   const [page, setPage] = useState<number>(1);
+  const [total, setTotal] = useState<number>(0);
   const [pokemonList, setPokemonList] = useState<PokemonInterface[]>([]);
-  const [pokemonListWithDetails, setPokemonListWithDetails] = useState<any[]>(
-    []
-  );
+  const [pokemonListWithDetails, setPokemonListWithDetails] = useState<
+    PokemonWithDetailsInterface[]
+  >([]);
   const [activePokemonImage, setActivePokemonImage] = useState<string>("");
-  const [pokemonSelected, setPokemonSelected] = useState<any>();
+  const [pokemonSelected, setPokemonSelected] =
+    useState<PokemonWithDetailsInterface | null>(null);
 
   useEffect(() => {
     const fetchPokemonList = async () => {
-      const pokemonList = await getPokemonList(page);
+      const data = await getPokemonList(page);
+      const pokemonList = data.results;
+
       setPokemonList(pokemonList);
+      setTotal(data.count);
+      setActivePokemonImage("");
     };
     fetchPokemonList();
   }, [page]);
@@ -26,8 +35,9 @@ const CharacterList = () => {
       const pokemonListWithDetails = await buildPokemonDetailsList(pokemonList);
       setPokemonListWithDetails(pokemonListWithDetails);
     };
+
     fetchPokemonDetailsList();
-  }, [pokemonList.length]);
+  }, [pokemonList, page]);
 
   const handleSelectActiveImage = (index: number) => {
     if (pokemonListWithDetails.length) {
@@ -42,19 +52,24 @@ const CharacterList = () => {
     setPokemonSelected(pokemon);
   };
 
+  const handleBackToPokemonList = () => {
+    setPokemonSelected(null);
+  };
+
   return (
-    <CharacterListContent
+    <PokemonListContent
       pokemonList={pokemonList}
       pokemonSelected={pokemonSelected}
-      setPokemonSelected={setPokemonSelected}
       pokemonListWithDetails={pokemonListWithDetails}
       handleSelectActiveImage={handleSelectActiveImage}
+      handleBackToPokemonList={handleBackToPokemonList}
       handleShowDetails={handleShowDetails}
       activePokemonImage={activePokemonImage}
       page={page}
       setPage={setPage}
+      total={total}
     />
   );
 };
 
-export default CharacterList;
+export default PokemonList;

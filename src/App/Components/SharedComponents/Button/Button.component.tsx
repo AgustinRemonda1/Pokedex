@@ -1,16 +1,8 @@
 import React from "react";
 import { ReactSVG } from "react-svg";
 import Tooltip from "../Tooltip/Tooltip.component";
+import { ButtonInterface } from "./Button.interface";
 import { StyledButton, SingleButton, Text } from "./Button.styles";
-
-interface ButtonProps {
-  icon: any;
-  text: string;
-  action: (value: any) => void;
-  value: any;
-  tooltipDisabled?: boolean;
-  active?: boolean;
-}
 
 const Button = ({
   icon,
@@ -19,11 +11,12 @@ const Button = ({
   value,
   tooltipDisabled,
   active,
-}: ButtonProps) => {
+  type,
+}: ButtonInterface) => {
   return tooltipDisabled ? (
-    <SingleButton onClick={() => action(value)} active={active}>
+    <SingleButton onClick={() => action(value)} active={active} type={type}>
       <ReactSVG src={icon} />
-      <Text>{text}</Text>
+      <Text type={type}>{text}</Text>
     </SingleButton>
   ) : (
     <Tooltip msg={text}>

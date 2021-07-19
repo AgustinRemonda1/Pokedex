@@ -1,9 +1,6 @@
 import React from "react";
 import { FlexTable, FlexRow } from "./SimpleFlexTable.styles";
-
-interface SimpleFlexTableProps {
-  config: any;
-}
+import { SimpleFlexTableProps } from "./SimpleFlexTable.interfaces";
 
 const SimpleFlexTable = ({ config }: SimpleFlexTableProps) => {
   return (

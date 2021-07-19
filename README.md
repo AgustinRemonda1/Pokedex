@@ -1,46 +1,77 @@
-# Getting Started with Create React App
+# Pokedex Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Setup del proyecto:
 
-## Available Scripts
+Una vez clonado el proyecto correr los siguientes comandos.
 
-In the project directory, you can run:
+```bash
+npm install
+npm start
+```
 
-### `npm start`
+### Setup del proyecto:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Una vez clonado el proyecto correr los siguientes comandos.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+npm install
+npm start
+```
 
-### `npm test`
+### Test del proyecto:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Se puede ejecutar todos a la vez o de a uno.
 
-### `npm run build`
+```bash
+npm run test:jest
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm run test:jest PokemonList
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Tecnologias
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+- Entorno de ejecucion:
+  - Node:
+- Lenguaje:
+  - Typescript
+- Frameworks:
+  - React
+  - Styled-components
+- Herramientas:
+  - Webpack
+  - Babel
+  - Jest
+  - Enzyme
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Url de acceso http://localhost:3000/
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Estructura de proyecto:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Assets: Esta es la carpeta donde se situan los iconos y tambien los datos de testing de la aplicacion.
+- Components: En esta carpeta se situan los componentes de la aplicacion.
+- Config: En esta carpeta se situan las configuraciones tanto de la aplicacion en si, como el lenguaje de la aplicacion.
+- Enzyme: En esta carpeta se situa el adaptador de Enzyme para poder usarse en los test, junto con Jest.
+- HOC: En esta carpeta se situan los componentes de alto orden, osea los componentes que modifican el comportamiento global de la aplicacion.
+- Interfaces: En esta carpeta se situan las interfaces de la aplicacion.
+- Services: En esta carpeta se encuentra el servicio de PokeApi.
+- Styles: En esta carpeta se situa tanto el estilo base de la aplicacion como los colores de la misma.
+- Utils: En esta carpeta se encuentran las utilidades globales, osea funciones que se usan en muchos lugares de la aplicacion y por lo general suelen ser algo "desprolijas".
+- View: En esta carpeta se encuentra el archivo view, que es el que se encarga de ensamblar toda la vista de la aplicacion.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Estructura de componentes:
 
-## Learn More
+Si bien hay dos tipos de componentes, los componentes compartidos y los componentes que son una vista como PokemonList y PokemonDetails, los componentes suelen tener la siguiente estructura.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- .component: Este es el archivo donde radica la funcionalidad del componente.
+- .content: Este es el archivo que se encarga de renderizar la vista del componente.
+- .config: En este archivo se encuentran configuraciones del componente o de los componentes reutilizables que se utilizan en el mismo, como pueden ser una Tabla o Botones.
+- .interface: En este archivo se encuentran interfaces del componente, tanto de las props que recibe como de los objetos que puede utilizar en el codigo.
+- .utils: En este archivo se situan utilidades/funciones que son necesarias pero pueden ser algo desprolijas y pueden ensuciar el codigo del componente.
+- .service: En este archivo se situan las funciones que van a llamar a la API.
+- .styles: En este archivo se encuentran los componentes estilizados que utiliza nuestro componente.
+- .data: En este archivo se situa los datos que van a ser utilizados en testing.
+- .test: En este archivo se encuentran los tests del componente.

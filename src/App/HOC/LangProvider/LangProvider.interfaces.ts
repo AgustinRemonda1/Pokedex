@@ -1,5 +1,5 @@
 interface LangProviderInterface {
-  children: any;
+  children: JSX.Element;
 }
 
 export default LangProviderInterface;

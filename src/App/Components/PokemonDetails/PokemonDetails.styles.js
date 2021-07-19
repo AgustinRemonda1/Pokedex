@@ -1,4 +1,11 @@
 import styled from "styled-components";
+import {
+  BLACK,
+  MINE_SHAFT,
+  PERSIAN_RED,
+  RED_ORANGE,
+  WHITE,
+} from "../../Styles/Colors.styles";
 
 export const PokemonDetailsContainer = styled.div`
   display: flex;
@@ -12,7 +19,7 @@ export const PokemonDetailsContainer = styled.div`
   flex: 1 1 auto;
 `;
 
-export const PokemonDetailsContent = styled.div`
+export const PokemonDetailsGrid = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -26,7 +33,7 @@ export const PokemonDetailsContent = styled.div`
 `;
 
 export const PokemonImageWrapper = styled.div`
-  flex: 0 0 5%;
+  flex: 0 0 45%;
   margin-top: 9em;
   width: 45%;
   height: 85%;
@@ -49,14 +56,10 @@ export const PokemonImageWrapper = styled.div`
 export const PokemonImageHeader = styled.div`
   margin-top: 1.5em;
   width: 100%;
-  background: linear-gradient(
-    100deg,
-    rgba(255, 255, 255, 1) 5%,
-    rgba(0, 0, 0, 1) 5%
-  );
+  background: linear-gradient(100deg, ${WHITE} 5%, ${BLACK} 5%);
   font-size: 1.25rem;
   padding: 0.5em 3em;
-  color: #ffffff;
+  color: ${WHITE};
 `;
 
 export const PokemonDetailLayoutTable = styled.div`
@@ -67,14 +70,14 @@ export const PokemonDetailLayoutTable = styled.div`
   width: 60%;
   background: linear-gradient(
     277deg,
-    rgba(255, 255, 255, 1) 20%,
-    rgba(204, 51, 51, 1) 20%,
-    rgba(204, 51, 51, 1) 38%,
-    rgba(255, 51, 51, 1) 38%
+    ${WHITE} 20%,
+    ${PERSIAN_RED} 20%,
+    ${PERSIAN_RED} 38%,
+    ${RED_ORANGE} 38%
   );
 `;
 
-export const ButtonsContainer = styled.div`
+export const HeaderButtonsContainer = styled.div`
   width: 90%;
   display: flex;
   align-content: center;
@@ -82,5 +85,18 @@ export const ButtonsContainer = styled.div`
   justify-content: space-around;
   flex-direction: row;
   margin-top: 0.75em;
+  z-index: 105;
+`;
+
+export const FooterButtonsContainer = styled.div`
+  width: 90%;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  margin-top: 0.75em;
+  background: ${MINE_SHAFT};
+  box-shadow: 2px 2px 2px 1px ${BLACK + "20"};
   z-index: 105;
 `;

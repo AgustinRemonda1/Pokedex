@@ -1,5 +1,8 @@
-import { PokemonInterface } from "./CharacterList.interfaces";
-import { getPokemon } from "./CharacterList.service";
+import {
+  PokemonInterface,
+  PokemonWithDetailsInterface,
+} from "../../Interfaces/Pokemon.interface";
+import { getPokemon } from "./PokemonList.service";
 
 export const idTaker = (url: string): number => {
   const idPosition = 6;
@@ -12,7 +15,7 @@ export const idTaker = (url: string): number => {
 export const buildPokemonDetailsList = async (
   pokemonList: PokemonInterface[]
 ) => {
-  const pokemonWithDetails: any[] = [];
+  const pokemonWithDetails: PokemonWithDetailsInterface[] = [];
 
   pokemonList.forEach((pokemon) => {
     const id = idTaker(pokemon.url);

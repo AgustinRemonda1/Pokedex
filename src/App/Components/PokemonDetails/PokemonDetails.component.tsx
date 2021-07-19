@@ -1,30 +1,15 @@
 import React, { useContext, useMemo, useState } from "react";
 import { LanguageContext } from "../../Config/Lang/Lang.language";
-import Button from "../SharedComponents/Button/Button.component";
-import SimpleFlexTable from "../SharedComponents/SimpleFlexTable/SimpleFlexTable.component";
-import {
-  generateDetailsConfig,
-  generateStatsConfig,
-  generateAbilitiesConfig,
-  modes,
-  generateButtonModes,
-} from "./PokemonDetails.config";
-import {
-  PokemonDetailsContainer,
-  PokemonDetailsContent,
-  PokemonImageWrapper,
-  PokemonImageHeader,
-  PokemonDetailLayoutTable,
-  ButtonsContainer,
-} from "./PokemonDetails.styles";
+import { modes, generateButtonModes } from "./PokemonDetails.config";
+import PokemonDetailsContent from "./PokemonDetails.content";
+import { PokemonDetailsProps } from "./PokemonDetails.interfaces";
+import { switchConfigMode } from "./PokemonDetails.utils";
 
-interface PokemonDetailsProps {
-  pokemonSelected: any;
-  setPokemonSelected: (pokemon: any) => void;
-}
-
-const PokemonDetails = ({ pokemonSelected }: PokemonDetailsProps) => {
-  const { language } = useContext(LanguageContext);
+const PokemonDetails = ({
+  pokemonSelected,
+  handleBackToPokemonList,
+}: PokemonDetailsProps) => {
+  const { language, changeLanguage, lang } = useContext(LanguageContext);
   const [mode, setMode] = useState<string>(modes.details);
   const modeButtons = generateButtonModes({ language, setMode, mode });
 
@@ -34,34 +19,19 @@ const PokemonDetails = ({ pokemonSelected }: PokemonDetailsProps) => {
       pokemon: pokemonSelected,
     };
 
-    switch (mode) {
-      case modes.details:
-        return generateDetailsConfig(configParams);
-      case modes.stats:
-        return generateStatsConfig(configParams);
-      case modes.abilities:
-        return generateAbilitiesConfig(configParams);
-      default:
-        return generateDetailsConfig(configParams);
-    }
-  }, [mode]);
+    return switchConfigMode({ mode, modes, configParams });
+  }, [mode, pokemonSelected, language]);
 
   return (
-    <PokemonDetailsContainer>
-      <PokemonDetailsContent>
-        <ButtonsContainer>
-          {modeButtons.map((button, index: number) => (
-            <Button key={index} {...button} />
-          ))}
-        </ButtonsContainer>
-        <PokemonDetailLayoutTable />
-        <SimpleFlexTable config={configMode} />
-      </PokemonDetailsContent>
-      <PokemonImageWrapper>
-        <PokemonImageHeader>{pokemonSelected.name}</PokemonImageHeader>
-        <img src={pokemonSelected.sprites.other.dream_world.front_default} />
-      </PokemonImageWrapper>
-    </PokemonDetailsContainer>
+    <PokemonDetailsContent
+      pokemonSelected={pokemonSelected}
+      handleBackToPokemonList={handleBackToPokemonList}
+      modeButtons={modeButtons}
+      configMode={configMode}
+      changeLanguage={changeLanguage}
+      lang={lang}
+      language={language}
+    />
   );
 };
 

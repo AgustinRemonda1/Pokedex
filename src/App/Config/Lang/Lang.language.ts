@@ -11,6 +11,6 @@ export const languageOptions = [
 
 export const LanguageContext = createContext({
   lang: "ES",
-  changeLanguage: (e: any): void => {},
+  changeLanguage: (): void => {},
   language: language.ES,
 });

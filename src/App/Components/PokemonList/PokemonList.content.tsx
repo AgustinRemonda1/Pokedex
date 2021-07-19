@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { CharacterListContentProps } from "./CharacterList.interfaces";
+import { PokemonListContentProps } from "./PokemonList.interfaces";
 import {
-  CharacterListContainer,
-  CharacterListGrid,
+  PokemonListContainer,
+  PokemonListGrid,
   PokedexTitle,
   Header,
   HeaderBackgroundLayout,
@@ -10,35 +10,43 @@ import {
   SideGradientLayout,
   ImageWrapper,
   NumberTitle,
-} from "./CharacterList.styles";
+  Footer,
+} from "./PokemonList.styles";
 import Table from "../SharedComponents/Table/Table.component";
 import { LanguageContext } from "../../Config/Lang/Lang.language";
-import { generateConfigWithLang } from "./CharacterList.config";
+import { generateConfigWithLang, perPage } from "./PokemonList.config";
 import PokemonDetails from "../PokemonDetails/PokemonDetails.component";
+import LangIcon from "../../Assets/Icons/translate.svg";
+import Button from "../SharedComponents/Button/Button.component";
 
-const CharacterListContent = ({
+const PokemonListContent = ({
   pokemonList,
   handleSelectActiveImage,
   activePokemonImage,
   handleShowDetails,
   pokemonSelected,
-  setPokemonSelected,
-}: CharacterListContentProps) => {
-  const { language } = useContext(LanguageContext);
+  handleBackToPokemonList,
+  page,
+  total,
+  setPage,
+}: PokemonListContentProps) => {
+  const { language, changeLanguage, lang } = useContext(LanguageContext);
+  const langOption = lang === language.es ? language.en : language.es;
   const configParams = {
     handleShowDetails,
     language,
   };
+  const langButtonType = "small-normal-button";
 
   return !pokemonSelected ? (
-    <CharacterListContainer>
+    <PokemonListContainer>
       <Header>
         <PokedexTitle>{language.pokedex}</PokedexTitle>
         <HeaderBackgroundLayout>
           <NumberTitle>{language.number}</NumberTitle>
         </HeaderBackgroundLayout>
       </Header>
-      <CharacterListGrid>
+      <PokemonListGrid>
         <ImageWrapper>
           {activePokemonImage && <img src={activePokemonImage} alt="" />}
         </ImageWrapper>
@@ -47,17 +55,30 @@ const CharacterListContent = ({
             onHover={handleSelectActiveImage}
             dataset={pokemonList}
             config={generateConfigWithLang(configParams)}
+            total={total}
+            page={page}
+            setPage={setPage}
+            perPage={perPage}
           />
         </ListContainer>
-      </CharacterListGrid>
+      </PokemonListGrid>
+      <Footer>
+        <Button
+          icon={LangIcon}
+          text={langOption}
+          action={() => changeLanguage()}
+          tooltipDisabled={true}
+          type={langButtonType}
+        ></Button>
+      </Footer>
       <SideGradientLayout />
-    </CharacterListContainer>
+    </PokemonListContainer>
   ) : (
     <PokemonDetails
       pokemonSelected={pokemonSelected}
-      setPokemonSelected={setPokemonSelected}
+      handleBackToPokemonList={handleBackToPokemonList}
     />
   );
 };
 
-export default CharacterListContent;
+export default PokemonListContent;

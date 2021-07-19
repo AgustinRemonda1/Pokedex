@@ -1,8 +1,10 @@
 import React from "react";
 import { capitalizeStrings } from "../../Utils/FormatStrings.utils";
-import DetailsIcon from "../../Assets/note-text-outline.svg";
-import StatsIcon from "../../Assets/chart-box-outline.svg";
-import AbilitiesIcon from "../../Assets/beaker-check-outline.svg";
+import DetailsIcon from "../../Assets/Icons/note-text-outline.svg";
+import StatsIcon from "../../Assets/Icons/chart-box-outline.svg";
+import AbilitiesIcon from "../../Assets/Icons/beaker-check-outline.svg";
+import LangIcon from "../../Assets/Icons/translate.svg";
+import BackIcon from "../../Assets/Icons/arrow-left.svg";
 
 export const generateDetailsConfig = ({ language, pokemon }: any) => {
   return [
@@ -101,6 +103,30 @@ export const generateButtonModes = ({ language, setMode, mode }: any) => {
       action: setMode,
       value: modes.abilities,
       active: modes.abilities === mode,
+      tooltipDisabled: true,
+    },
+  ];
+};
+
+export const generateActionButtons = ({
+  language,
+  lang,
+  changeLanguage,
+  handleBackToPokemonList,
+}: any) => {
+  return [
+    {
+      icon: BackIcon,
+      text: language.back,
+      action: handleBackToPokemonList,
+      type: "small-normal-button",
+      tooltipDisabled: true,
+    },
+    {
+      icon: LangIcon,
+      text: lang === language.es ? language.en : language.es,
+      action: changeLanguage,
+      type: "small-normal-button",
       tooltipDisabled: true,
     },
   ];

@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import {
   language,
   LanguageContext,
-  //  languageOptions,
+  languageOptions,
 } from "../../Config/Lang/Lang.language";
-//import { setLocalValue } from "../Utils/LocalStorage.utils";
+import { getLocalValue, setLocalValue } from "../../Utils/LocalStorage.utils";
 import LangProviderInterface from "./LangProvider.interfaces";
 
 const LanguageProvider = ({ children }: LangProviderInterface) => {
@@ -12,19 +12,30 @@ const LanguageProvider = ({ children }: LangProviderInterface) => {
   const [languageProvider, setLanguageProvider] = useState(ES);
   const [lang, setLang] = useState("");
 
-  // useEffect(() => {
-  //   lang && setLocalValue("lang", lang);
+  useEffect(() => {
+    const localLang = getLocalValue("lang");
 
-  //   languageOptions.find(
-  //     (langOption:any) =>
-  //       langOption.lang === langAuth && setLanguageProvider(langOption.value)
-  //   );
+    languageOptions.map(
+      (langOption: any) =>
+        langOption.lang === localLang && setLanguageProvider(langOption.value)
+    );
 
-  //   langAuth && setLang(langAuth);
-  // }, [lang, langAuth, languageOptions.length]);
+    localLang && setLang(localLang);
+  }, []);
 
-  const changeLanguage = (e: any): void => {
-    console.log(e.target.value);
+  useEffect(() => {
+    lang && setLocalValue("lang", lang);
+  }, [lang]);
+
+  const changeLanguage = (): void => {
+    const languageToChange = languageOptions.find(
+      (langOption) => langOption.lang !== lang
+    );
+
+    if (languageToChange) {
+      setLang(languageToChange.lang);
+      setLanguageProvider(languageToChange.value);
+    }
   };
 
   return (

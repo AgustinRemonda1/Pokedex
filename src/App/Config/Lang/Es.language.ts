@@ -1,6 +1,6 @@
 const ES = {
-  es: "Es",
-  en: "En",
+  es: "ES",
+  en: "EN",
   lang: "lang",
   pokedex: "Pokedex",
   number: "Número",
@@ -19,6 +19,7 @@ const ES = {
   specialDefense: "Defensa especial",
   speed: "Velocidad",
   abilities: "Habilidades",
+  back: "Volver",
 };
 
 export default ES;
