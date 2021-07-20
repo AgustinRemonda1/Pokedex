@@ -4,13 +4,7 @@ import {
   TablePaginationButton,
 } from "./TablePagination.styles";
 import { calculatePageNumbers } from "./TablePagination.utils";
-
-interface TablePaginationProps {
-  perPage: number;
-  page: number;
-  total: number;
-  setPage: (page: number) => void;
-}
+import { TablePaginationProps } from "./TablePagination.interfaces";
 
 const TablePagination = ({
   perPage,

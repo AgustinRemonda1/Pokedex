@@ -42,7 +42,8 @@ const PokemonList = () => {
   const handleSelectActiveImage = (index: number) => {
     if (pokemonListWithDetails.length) {
       const pokemonImage =
-        pokemonListWithDetails[index].sprites.other.dream_world.front_default;
+        pokemonListWithDetails[index]?.sprites?.other?.dream_world
+          ?.front_default;
       setActivePokemonImage(pokemonImage);
     }
   };

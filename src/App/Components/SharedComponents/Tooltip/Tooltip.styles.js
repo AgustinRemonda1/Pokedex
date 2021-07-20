@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BLACK } from "../../../Styles/Colors.styles";
+import { BLACK, WHITE } from "../../../Styles/Colors.styles";
 
 export const TooltipText = styled.div`
   cursor: pointer;
@@ -13,7 +13,7 @@ export const TooltipBox = styled.div`
   color: transparent;
   background-color: transparent;
   width: 100%;
-  padding: 5px 5px;
+  padding: 0.3125em;
   border-radius: 4px;
   text-align: center;
   font-size: 1rem;
@@ -40,10 +40,10 @@ export const TooltipCard = styled.div`
   position: relative;
   & ${TooltipText}:hover + ${TooltipBox} {
     visibility: visible;
-    color: #fff;
-    background-color: ${BLACK};
+    color: ${WHITE};
+    background-color: ${BLACK + "80"};
     width: 75px;
-    padding: 8px 8px;
+    padding: 0.5em;
 
     &:before {
       border-color: transparent transparent ${BLACK + "80"} ${BLACK + "80"};

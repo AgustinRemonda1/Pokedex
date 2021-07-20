@@ -1,5 +1,5 @@
 import { PokemonWithDetailsInterface } from "../../Interfaces/Pokemon.interface";
-import { ButtonInterface } from "../SharedComponents/Button/Button.interface";
+import { ButtonInterface } from "../SharedComponents/Button/Button.interfaces";
 import { FlexTableConfigInterface } from "../SharedComponents/SimpleFlexTable/SimpleFlexTable.interfaces";
 
 export interface PokemonDetailsProps {

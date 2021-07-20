@@ -3,7 +3,6 @@ export interface ButtonInterface {
   text: string;
   action: (value?: any) => void;
   value?: any;
-  tooltipDisabled?: boolean;
   active?: boolean;
   type?: string;
 }

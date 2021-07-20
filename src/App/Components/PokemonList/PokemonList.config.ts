@@ -18,6 +18,7 @@ export const generateConfigWithLang = (configParams: any) => {
       name: language.details,
       isAction: true,
       icon: PokeballIcon,
+      type: "button-with-tooltip",
       onClick: (index: number) => {
         handleShowDetails(index);
       },

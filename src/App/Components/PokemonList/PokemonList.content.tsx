@@ -67,7 +67,6 @@ const PokemonListContent = ({
           icon={LangIcon}
           text={langOption}
           action={() => changeLanguage()}
-          tooltipDisabled={true}
           type={langButtonType}
         ></Button>
       </Footer>

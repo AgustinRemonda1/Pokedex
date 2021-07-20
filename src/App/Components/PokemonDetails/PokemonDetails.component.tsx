@@ -17,10 +17,11 @@ const PokemonDetails = ({
     const configParams = {
       language,
       pokemon: pokemonSelected,
+      lang,
     };
 
     return switchConfigMode({ mode, modes, configParams });
-  }, [mode, pokemonSelected, language]);
+  }, [mode, pokemonSelected, language, lang]);
 
   return (
     <PokemonDetailsContent

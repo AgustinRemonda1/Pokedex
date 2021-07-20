@@ -24,7 +24,7 @@ export const FlexRow = styled.div`
   color: ${BLACK};
   z-index: 100;
   span {
-    padding: 10px;
+    padding: 0.625em;
   }
   span:first-child {
     flex: 0 0 35%;

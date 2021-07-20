@@ -4,17 +4,8 @@ import { TableContainer, Table } from "./Table.styles";
 import { formatPokemonNumber } from "./Table.utils";
 import Button from "../Button/Button.component";
 import { capitalizeStrings } from "../../../Utils/FormatStrings.utils";
-import Pagination from "../TablePagination/TablePagination.component";
-
-interface TableProps {
-  config: any[];
-  dataset: any[];
-  onHover: (value: number) => void;
-  total: number;
-  page: number;
-  setPage: (page: number) => void;
-  perPage: number;
-}
+import TablePagination from "../TablePagination/TablePagination.component";
+import { TableProps } from "./Table.interfaces";
 
 const TableComponent = ({
   config,
@@ -33,6 +24,7 @@ const TableComponent = ({
           text={column.name}
           action={column.onClick}
           value={pokemonIndex}
+          type={column.type}
         />
       </td>
     );
@@ -63,7 +55,7 @@ const TableComponent = ({
           ))}
         </tbody>
       </Table>
-      <Pagination
+      <TablePagination
         perPage={perPage}
         page={page}
         total={total}

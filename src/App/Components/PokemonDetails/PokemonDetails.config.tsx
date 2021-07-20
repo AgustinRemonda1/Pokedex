@@ -1,12 +1,14 @@
 import React from "react";
-import { capitalizeStrings } from "../../Utils/FormatStrings.utils";
+import { capitalizeStrings, slugToText } from "../../Utils/FormatStrings.utils";
 import DetailsIcon from "../../Assets/Icons/note-text-outline.svg";
 import StatsIcon from "../../Assets/Icons/chart-box-outline.svg";
 import AbilitiesIcon from "../../Assets/Icons/beaker-check-outline.svg";
 import LangIcon from "../../Assets/Icons/translate.svg";
 import BackIcon from "../../Assets/Icons/arrow-left.svg";
 
-export const generateDetailsConfig = ({ language, pokemon }: any) => {
+export const generateDetailsConfig = ({ language, pokemon, lang }: any) => {
+  const isEnglishLanguage = language.en === lang;
+
   return [
     {
       title: language.name,
@@ -15,16 +17,20 @@ export const generateDetailsConfig = ({ language, pokemon }: any) => {
     {
       title: language.type,
       data: pokemon.types.map((item: any, index: number) => (
-        <p key={index}>{capitalizeStrings(item.type.name)}</p>
+        <p key={index}>{language[item.type.name]}</p>
       )),
     },
     {
       title: language.height,
-      data: Math.round(pokemon.height * 3.9),
+      data: isEnglishLanguage
+        ? Math.round(pokemon.height * 3.9)
+        : Math.round(pokemon.height * 10),
     },
     {
       title: language.weight,
-      data: Math.round(pokemon.weight / 4.3) + " lbs",
+      data: isEnglishLanguage
+        ? Math.round(pokemon.weight / 4.3) + " lbs"
+        : Math.round(pokemon.weight / 10) + " kgs",
     },
     {
       title: language.numberOfBattles,
@@ -69,7 +75,7 @@ export const generateStatsConfig = ({ language, pokemon }: any) => {
 export const generateAbilitiesConfig = ({ language, pokemon }: any) => {
   return pokemon.abilities.map((item: any) => ({
     title: language.name,
-    data: item.ability.name,
+    data: slugToText(item.ability.name),
   }));
 };
 
@@ -87,7 +93,6 @@ export const generateButtonModes = ({ language, setMode, mode }: any) => {
       action: setMode,
       value: modes.details,
       active: modes.details === mode,
-      tooltipDisabled: true,
     },
     {
       icon: StatsIcon,
@@ -95,7 +100,6 @@ export const generateButtonModes = ({ language, setMode, mode }: any) => {
       action: setMode,
       value: modes.stats,
       active: modes.stats === mode,
-      tooltipDisabled: true,
     },
     {
       icon: AbilitiesIcon,
@@ -103,7 +107,6 @@ export const generateButtonModes = ({ language, setMode, mode }: any) => {
       action: setMode,
       value: modes.abilities,
       active: modes.abilities === mode,
-      tooltipDisabled: true,
     },
   ];
 };

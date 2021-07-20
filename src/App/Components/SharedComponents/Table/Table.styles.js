@@ -37,7 +37,7 @@ export const Table = styled.table`
   }
 
   td {
-    padding: 5px 10px;
+    padding: 0.3125em 0.625em;
   }
 
   tr td:first-child {
