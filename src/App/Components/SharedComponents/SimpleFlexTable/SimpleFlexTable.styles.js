@@ -4,7 +4,7 @@ import { BLACK, GRAY, SILVER, WHITE } from "../../../Styles/Colors.styles";
 export const FlexTable = styled.div`
   margin-top: 0.75em;
   width: 90%;
-  height: 50%;
+  height: 65%;
   display: flex;
   font-size: 1.25rem;
   flex-direction: column;

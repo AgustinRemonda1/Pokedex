@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { SCREEN_MD_MIN } from "../../Styles/Breakpoints.styles";
 import {
   BLACK,
   MINE_SHAFT,
@@ -17,6 +18,12 @@ export const PokemonDetailsContainer = styled.div`
   height: 100vh;
   overflow-x: hidden;
   flex: 1 1 auto;
+  @media screen and (max-width: ${SCREEN_MD_MIN}) {
+    flex-direction: column;
+    background: ${MINE_SHAFT};
+    height: 100%;
+  }
+}
 `;
 
 export const PokemonDetailsGrid = styled.div`
@@ -25,16 +32,20 @@ export const PokemonDetailsGrid = styled.div`
   flex-wrap: wrap;
   align-content: flex-start;
   justify-content: flex-start;
-  align-items: flex-start
   position: relative;
   display: flex;
   flex: 0 0 60%;
   width: 100%;
+  @media screen and (max-width: ${SCREEN_MD_MIN}) {
+    flex: 0 0 100%;
+    order: 2;
+    justify-content: center;
+    padding-bottom: 2em;
+  }
 `;
 
 export const PokemonImageWrapper = styled.div`
   flex: 0 0 45%;
-  margin-top: 9em;
   width: 45%;
   height: 85%;
   margin: 0;
@@ -42,7 +53,7 @@ export const PokemonImageWrapper = styled.div`
   flex-wrap: wrap;
   flex-direction: row;
   align-content: flex-start;
-  align-items: stretch;
+  align-items: flex-start;
   justify-content: space-between;
   z-index: 100;
   img {
@@ -50,6 +61,25 @@ export const PokemonImageWrapper = styled.div`
     padding: 1.5em;
     width: 60%;
     heigh: 60%;
+  }
+  @media screen and (max-width: ${SCREEN_MD_MIN}) {
+    flex: 0 0 100%;
+    order: 1;
+    margin-top: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    img {
+      margin-top: 1em;
+      margin-bottom: 1em;
+      width: auto;
+      height: auto;
+      min-width: 85%;
+      min-height: 85%;
+      background: ${WHITE};
+      border-radius: 100%;
+      padding: 0.5em;
+    }
   }
 `;
 
@@ -60,6 +90,10 @@ export const PokemonImageHeader = styled.div`
   font-size: 1.25rem;
   padding: 0.5em 3em;
   color: ${WHITE};
+  @media screen and (max-width: ${SCREEN_MD_MIN}) {
+    margin-top: 0;
+    background: ${BLACK};
+  }
 `;
 
 export const PokemonDetailLayoutTable = styled.div`
@@ -67,7 +101,7 @@ export const PokemonDetailLayoutTable = styled.div`
   left: 0;
   top: 0;
   height: 100%;
-  width: 60%;
+  width: 100%;
   background: linear-gradient(
     277deg,
     ${WHITE} 20%,
@@ -75,6 +109,10 @@ export const PokemonDetailLayoutTable = styled.div`
     ${PERSIAN_RED} 38%,
     ${RED_ORANGE} 38%
   );
+  @media screen and (max-width: ${SCREEN_MD_MIN}) {
+    background: ${PERSIAN_RED};
+    border: 2px ${RED_ORANGE} solid;
+  }
 `;
 
 export const HeaderButtonsContainer = styled.div`

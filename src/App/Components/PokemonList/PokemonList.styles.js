@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { SCREEN_MD_MIN } from "../../Styles/Breakpoints.styles";
 import {
   BLACK,
   MINE_SHAFT,
@@ -19,6 +20,14 @@ export const PokemonListContainer = styled.div`
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
+  @media screen and (max-width: ${SCREEN_MD_MIN}) {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    background: ${MINE_SHAFT};
+  }
 `;
 
 export const PokemonListGrid = styled.div`
@@ -26,6 +35,9 @@ export const PokemonListGrid = styled.div`
   flex-direction: row;
   flex: 1 1 0;
   height: 100%;
+  @media screen and (max-width: ${SCREEN_MD_MIN}) {
+    flex-wrap: wrap;
+  }
 `;
 
 export const PokedexTitle = styled.h2`
@@ -61,6 +73,9 @@ export const HeaderBackgroundLayout = styled.div`
   width: 87%;
   height: 100%;
   background: linear-gradient(104deg, ${WHITE + "00"} 20%, ${MINE_SHAFT} 20%);
+  @media screen and (max-width: ${SCREEN_MD_MIN}) {
+    display: none;
+  }
 `;
 
 export const ListContainer = styled.div`
@@ -72,6 +87,14 @@ export const ListContainer = styled.div`
   justify-items: flex-end;
   align-items: flex-end;
   z-index: 100;
+  @media screen and (max-width: ${SCREEN_MD_MIN}) {
+    padding-top: 1em;
+    justify-items: center;
+    align-items: center;
+    flex: 1 1 100%;
+    width: 100vw;
+    background: ${OUTRAGEOUS_ORANGE};
+  }
 `;
 
 export const SideGradientLayout = styled.div`
@@ -88,8 +111,10 @@ export const SideGradientLayout = styled.div`
     ${OUTRAGEOUS_ORANGE} 38%,
     ${NEON_CARROT} 38%
   );
-
   z-index: 10;
+  @media screen and (max-width: ${SCREEN_MD_MIN}) {
+    display: none;
+  }
 `;
 
 export const ImageWrapper = styled.div`
@@ -107,6 +132,24 @@ export const ImageWrapper = styled.div`
     padding: 1.5em;
     width: 60%;
     heigh: 60%;
+  }
+  @media screen and (max-width: ${SCREEN_MD_MIN}) {
+    flex: 1 1 100%;
+    position: relative;
+    width: 85%;
+    height: 85%;
+    img {
+      background: ${WHITE};
+      border-radius: 50%;
+      margin: 1em 0;
+      padding: 0.5em;
+      min-width: 50%;
+      min-height: 50%;
+      max-width: 85%;
+      max-height: 85%;
+      width: auto;
+      height: auto;
+    }
   }
 `;
 

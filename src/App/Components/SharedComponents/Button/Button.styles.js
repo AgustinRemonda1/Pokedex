@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { SCREEN_SM_MIN } from "../../../Styles/Breakpoints.styles";
 import { BLACK, BLAZE_ORANGE, WHITE } from "../../../Styles/Colors.styles";
 import { buttonTypes } from "./Button.config";
 
@@ -42,5 +43,11 @@ export const SingleButton = styled.button`
     height: ${(props) =>
       props.type === buttonTypes.smallNormalButton ? "30px" : "50px"};
     fill: ${(props) => (props.active ? BLACK : WHITE)};
+  }
+  @media screen and (max-width: ${SCREEN_SM_MIN}) {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
   }
 `;

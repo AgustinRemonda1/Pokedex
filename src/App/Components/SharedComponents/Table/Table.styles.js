@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { SCREEN_SM_MIN } from "../../../Styles/Breakpoints.styles";
 import {
   BLACK,
   BLAZE_ORANGE,
@@ -55,5 +56,8 @@ export const Table = styled.table`
       color: ${WHITE};
       background: linear-gradient(120deg, ${BLAZE_ORANGE} 47%, ${BLACK} 47%);
     }
+  }
+  @media screen and (max-width: ${SCREEN_SM_MIN}) {
+    font-size: 1rem;
   }
 `;
