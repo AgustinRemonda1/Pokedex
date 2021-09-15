@@ -39,11 +39,15 @@ const PokemonList = () => {
     fetchPokemonDetailsList();
   }, [pokemonList, page]);
 
+  const getPokemonImage = (index: number) => {
+    return pokemonListWithDetails[index]?.sprites?.other?.dream_world
+      ?.front_default;
+  };
+
   const handleSelectActiveImage = (index: number) => {
     if (pokemonListWithDetails.length) {
-      const pokemonImage =
-        pokemonListWithDetails[index]?.sprites?.other?.dream_world
-          ?.front_default;
+      const pokemonImage = getPokemonImage(index);
+
       setActivePokemonImage(pokemonImage);
     }
   };

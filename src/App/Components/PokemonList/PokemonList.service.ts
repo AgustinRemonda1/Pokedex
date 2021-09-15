@@ -4,7 +4,7 @@ import { perPage } from "./PokemonList.config";
 export const getPokemonList = async (page: number) => {
   const requestParams = {
     endpoint: "/pokemon",
-    params: `?limit=${perPage}&offset=${page}`,
+    params: `?limit=${perPage}&offset=${page * perPage}`,
   };
 
   const data = await callPokemonApiService(requestParams);
