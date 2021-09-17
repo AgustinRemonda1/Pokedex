@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
-import {
-  language,
-  LanguageContext,
-  languageOptions,
-} from "../../Config/Lang/Lang.language";
+import React, { FC, useState, useEffect, ReactNode } from "react";
+import { LanguageContext } from "src/App/Core/Contexts/Language.context";
+import { language, languageOptions } from "../../Config/Lang/Lang.language";
 import { getLocalValue, setLocalValue } from "../../Utils/LocalStorage.utils";
-import LangProviderInterface from "./LangProvider.interfaces";
 
-const LanguageProvider = ({ children }: LangProviderInterface) => {
+interface LangProviderInterface {
+  children: ReactNode;
+}
+
+const LanguageProvider: FC<LangProviderInterface> = ({ children }) => {
   const { ES } = language;
   const [languageProvider, setLanguageProvider] = useState(ES);
   const [lang, setLang] = useState("");
