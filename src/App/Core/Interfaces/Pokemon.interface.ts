@@ -22,6 +22,9 @@ interface SpriteInterface {
   };
 }
 
+interface SpeciesInterface {
+  url: string;
+}
 export interface PokemonWithDetailsInterface {
   abilities: AbilityInterface[];
   name: string;
@@ -31,4 +34,5 @@ export interface PokemonWithDetailsInterface {
   game_indices: any[];
   base_experience: number;
   stats: StatInterface[];
+  species: SpeciesInterface;
 }
