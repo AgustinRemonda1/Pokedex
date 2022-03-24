@@ -1,5 +1,5 @@
 import React from "react";
-import useLanguage from "src/App/Core/Hooks/Shared/useLanguage.hook";
+import useLanguage from "../../Core/Hooks/Shared/useLanguage.hook";
 import {
   Header,
   HeaderBackgroundLayout,

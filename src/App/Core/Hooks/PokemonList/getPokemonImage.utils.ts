@@ -4,5 +4,7 @@ export const getPokemonImage = (
   listWithDetails: PokemonWithDetailsInterface[],
   index: number
 ) => {
-  return listWithDetails[index]?.sprites?.other?.dream_world?.front_default;
+  const pokemon = listWithDetails[index];
+
+  return pokemon.sprites.other.dream_world.front_default;
 };

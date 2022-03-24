@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import { PokemonWithDetailsInterface } from "src/App/Core/Interfaces/Pokemon.interface";
-import { capitalizeStrings } from "src/App/Utils/FormatStrings.utils";
+import { PokemonWithDetailsInterface } from "../../Core/Interfaces/Pokemon.interface";
+import { capitalizeStrings } from "../../Utils/FormatStrings.utils";
 import {
   PokemonImageWrapper,
   PokemonImageHeader,
@@ -11,7 +11,9 @@ interface PokemonImageDetailsProps {
 }
 
 const PokemonImageDetails: FC<PokemonImageDetailsProps> = ({ pokemon }) => {
-  const pokemonImage = pokemon?.sprites.other.dream_world.front_default;
+  const pokemonImage = pokemon
+    ? pokemon.sprites.other.dream_world.front_default
+    : "";
   const pokemonName = pokemon ? pokemon.name : "";
 
   return (

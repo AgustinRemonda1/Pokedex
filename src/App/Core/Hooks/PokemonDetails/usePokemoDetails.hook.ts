@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from "react";
-import { idTaker } from "src/App/Utils/IdTaker.utils";
+import { idTaker } from "../../../Utils/IdTaker.utils";
 import { getPokemonInfo } from "../../Service/PokemonDetails.service";
 import useLanguage from "../Shared/useLanguage.hook";
 import usePokemon from "../Shared/usePokemon.hook";
@@ -13,7 +13,7 @@ const usePokemonDetails = () => {
 
   useEffect(() => {
     const fetchPokemonInfo = async () => {
-      const url = String(pokemon?.species.url);
+      const url = pokemon ? pokemon.species.url : "";
       const pokemonID = idTaker(url);
 
       await getPokemonInfo(pokemonID, lang);

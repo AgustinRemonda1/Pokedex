@@ -5,8 +5,8 @@ import {
   SILVER,
   BLACK,
   MINE_SHAFT,
-} from "src/App/Styles/Colors.styles";
-import { SCREEN_MD_MIN } from "src/App/Styles/Breakpoints.styles";
+} from "../../Styles/Colors.styles";
+import { SCREEN_MD_MIN } from "../../Styles/Breakpoints.styles";
 
 export const PokedexTitle = styled.h2`
   margin: 0 0 0 0.5em;

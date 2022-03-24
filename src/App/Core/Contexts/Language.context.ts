@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { language } from "src/App/Config/Lang/Lang.language";
+import { language } from "../../Config/Lang/Lang.language";
 
 interface LanguageInterface {
   [propName: string]: string;

@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { PokemonInterface } from "src/App/Core/Interfaces/Pokemon.interface";
+import { PokemonInterface } from "../../Core/Interfaces/Pokemon.interface";
 import Table from "../Shared/Table/Table";
 import {
   PokemonListGrid,

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BLACK } from "src/App/Styles/Colors.styles";
+import { BLACK } from "../../Styles/Colors.styles";
 
 export const Footer = styled.div`
   display: flex;

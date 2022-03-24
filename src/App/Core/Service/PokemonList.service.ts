@@ -2,8 +2,8 @@ import callPokeApiService from "./PokeApi.service";
 import {
   PokemonInterface,
   PokemonWithDetailsInterface,
-} from "src/App/Core/Interfaces/Pokemon.interface";
-import { idTaker } from "src/App/Utils/IdTaker.utils";
+} from "../../Core/Interfaces/Pokemon.interface";
+import { idTaker } from "../../Utils/IdTaker.utils";
 import { getPokemon } from "./PokemonDetails.service";
 
 const PER_PAGE = 5;

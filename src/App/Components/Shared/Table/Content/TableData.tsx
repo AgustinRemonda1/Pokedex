@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import TableButton from "./TableButton";
 import { formatPokemonNumber } from "../Table.utils";
-import { capitalizeStrings } from "src/App/Utils/FormatStrings.utils";
+import { capitalizeStrings } from "../../../../Utils/FormatStrings.utils";
 
 export interface TableDataProps {
   config: any[];

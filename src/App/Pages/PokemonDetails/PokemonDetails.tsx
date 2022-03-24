@@ -1,8 +1,8 @@
 import React, { useMemo } from "react";
-import PokemonDetailsContent from "src/App/Components/PokemonDetailsContent/PokemonDetailsContent";
-import PokemonImageDetails from "src/App/Components/PokemonImageDetails/PokemonImageDetails";
-import usePokemonDetails from "src/App/Core/Hooks/PokemonDetails/usePokemoDetails.hook";
-import useLanguage from "src/App/Core/Hooks/Shared/useLanguage.hook";
+import PokemonDetailsContent from "../../Components/PokemonDetailsContent";
+import PokemonImageDetails from "../../Components/PokemonImageDetails";
+import usePokemonDetails from "../../Core/Hooks/PokemonDetails/usePokemoDetails.hook";
+import useLanguage from "../../Core/Hooks/Shared/useLanguage.hook";
 import {
   modes,
   generateButtonModes,

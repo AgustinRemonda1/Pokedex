@@ -1,6 +1,6 @@
 import React, { FC, useState, ReactNode } from "react";
-import { PokemonContext } from "src/App/Core/Contexts/Pokemon.context";
-import { PokemonWithDetailsInterface } from "src/App/Core/Interfaces/Pokemon.interface";
+import { PokemonContext } from "../../Core/Contexts/Pokemon.context";
+import { PokemonWithDetailsInterface } from "../../Core/Interfaces/Pokemon.interface";
 
 interface PokemonProps {
   children: ReactNode;
