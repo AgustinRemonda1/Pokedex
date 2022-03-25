@@ -5,8 +5,8 @@ import {
   SILVER,
   BLACK,
   MINE_SHAFT,
-} from "../../Styles/Colors.styles";
-import { SCREEN_MD_MIN } from "../../Styles/Breakpoints.styles";
+} from "../../../Styles/Colors.styles";
+import { SCREEN_MD_MIN } from "../../../Styles/Breakpoints.styles";
 
 export const PokedexTitle = styled.h2`
   margin: 0 0 0 0.5em;
@@ -18,7 +18,7 @@ export const NumberTitle = styled.h2`
   text-align: center;
 `;
 
-export const Header = styled.div`
+export const PokemonHeader = styled.div`
   display: flex;
   width: 100%;
   position: relative;

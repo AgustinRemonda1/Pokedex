@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { BLACK } from "../../Styles/Colors.styles";
+import { BLACK } from "../../../Styles/Colors.styles";
 
-export const Footer = styled.div`
+export const PokemonFooter = styled.div`
   display: flex;
   width: 100%;
   background: ${BLACK};

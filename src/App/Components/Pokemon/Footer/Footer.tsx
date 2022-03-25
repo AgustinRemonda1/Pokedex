@@ -1,23 +1,23 @@
 import React from "react";
-import { Footer } from "./PokemonFooter.styled";
+import { PokemonFooter } from "./Footer.styled";
 import LangIcon from "../../Assets/Icons/translate.svg";
-import Button from "../Shared/Button";
-import useLanguage from "../../Core/Hooks/useLanguage";
+import Button from "../../Shared/Button";
+import useLanguage from "../../../Core/Hooks/useLanguage";
 
-const PokemonFooter = () => {
+const Footer = () => {
   const { language, changeLanguage, lang } = useLanguage();
   const langOption = lang === language.es ? language.en : language.es;
 
   return (
-    <Footer>
+    <PokemonFooter>
       <Button
         icon={LangIcon}
         text={langOption}
         action={() => changeLanguage()}
         type="small-normal-button"
       />
-    </Footer>
+    </PokemonFooter>
   );
 };
 
-export default PokemonFooter;
+export default Footer;

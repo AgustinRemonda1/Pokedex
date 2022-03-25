@@ -1,13 +1,13 @@
 import React, { FC } from "react";
-import { PokemonInterface } from "../../Core/Modules/Pokemon/Interfaces";
-import Table from "../Shared/Table";
+import { PokemonInterface } from "../../../Core/Modules/Pokemon/Interfaces";
+import Table from "../../Shared/Table";
 import {
   PokemonListGrid,
   ImageWrapper,
   ListContainer,
-} from "./PokemonListContent.styled";
+} from "./ListContent.styled";
 
-export interface PokemonListContentProps {
+export interface ListContentProps {
   activePokemonImage: string;
   onSelectActiveImage: (index: number) => void;
   pokemonList: PokemonInterface[];
@@ -18,7 +18,7 @@ export interface PokemonListContentProps {
   perPage: number;
 }
 
-const PokemonListContent: FC<PokemonListContentProps> = ({
+const ListContent: FC<ListContentProps> = ({
   activePokemonImage,
   onSelectActiveImage,
   pokemonList,
@@ -50,4 +50,4 @@ const PokemonListContent: FC<PokemonListContentProps> = ({
   );
 };
 
-export default PokemonListContent;
+export default ListContent;

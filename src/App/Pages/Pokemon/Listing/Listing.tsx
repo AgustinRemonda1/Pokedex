@@ -1,9 +1,9 @@
 import React from "react";
 import { PokemonListContainer, SideGradientLayout } from "./Listing.styled";
 import useLanguage from "../../../Core/Hooks/useLanguage";
-import PokemonHeader from "../../../Components/PokemonHeader/PokemonHeader";
-import PokemonFooter from "../../../Components/PokemonFooter/PokemonFooter";
-import PokemonListContent from "../../../Components/PokemonListContent/PokemonListContent";
+import PokemonHeader from "../../../Components/Pokemon/Header";
+import PokemonFooter from "../../../Components/Pokemon/Footer";
+import PokemonListContent from "../../../Components/Pokemon/ListContent";
 import { generateConfigWithLang } from "./Config";
 import { useListing } from "../../../Core/Modules/Pokemon";
 

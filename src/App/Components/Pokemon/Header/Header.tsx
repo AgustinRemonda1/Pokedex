@@ -1,22 +1,22 @@
 import React from "react";
-import useLanguage from "../../Core/Hooks/useLanguage";
+import useLanguage from "../../../Core/Hooks/useLanguage";
 import {
-  Header,
+  PokemonHeader,
   HeaderBackgroundLayout,
   PokedexTitle,
   NumberTitle,
-} from "./PokemonHeader.styled";
+} from "./Header.styled";
 
-const PokemonHeader = () => {
+const Header = () => {
   const { language } = useLanguage();
   return (
-    <Header>
+    <PokemonHeader>
       <PokedexTitle>{language.pokedex}</PokedexTitle>
       <HeaderBackgroundLayout>
         <NumberTitle>{language.number}</NumberTitle>
       </HeaderBackgroundLayout>
-    </Header>
+    </PokemonHeader>
   );
 };
 
-export default PokemonHeader;
+export default Header;
