@@ -6,7 +6,7 @@ import {
   generateDetailsConfig,
   generateAbilitiesConfig,
   generateStatsConfig,
-} from "./PokemonDetails.config";
+} from "./Config";
 
 const pokemonSelected = pokemonListWithDetails[0];
 const handleBackToPokemonList = jest.fn();

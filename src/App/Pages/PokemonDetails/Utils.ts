@@ -2,7 +2,7 @@ import {
   generateDetailsConfig,
   generateStatsConfig,
   generateAbilitiesConfig,
-} from "./PokemonDetails.config";
+} from "./Config";
 
 export const switchConfigMode = ({ mode, modes, configParams }: any) => {
   switch (mode) {

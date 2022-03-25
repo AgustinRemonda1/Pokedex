@@ -1,19 +1,15 @@
 import React, { useMemo } from "react";
 import PokemonDetailsContent from "../../Components/PokemonDetailsContent";
 import PokemonImageDetails from "../../Components/PokemonImageDetails";
-import usePokemonDetails from "../../Core/Hooks/PokemonDetails/usePokemoDetails.hook";
-import useLanguage from "../../Core/Hooks/Shared/useLanguage.hook";
-import {
-  modes,
-  generateButtonModes,
-  generateActionButtons,
-} from "./PokemonDetails.config";
+import { useDetails } from "../../Core/Modules/Pokemon";
+import useLanguage from "../../Core/Hooks/useLanguage";
+import { modes, generateButtonModes, generateActionButtons } from "./Config";
 import { PokemonDetailsContainer } from "./PokemonDetails.styled";
-import { switchConfigMode } from "./PokemonDetails.utils";
+import { switchConfigMode } from "./Utils";
 
 const PokemonDetails = () => {
   const { language, changeLanguage, lang } = useLanguage();
-  const { state, actions } = usePokemonDetails();
+  const { state, actions } = useDetails();
   const { mode, pokemon } = state;
   const { onChangeMode, onBackToPokemonDetails } = actions;
   const modeButtons = generateButtonModes({ language, onChangeMode, mode });

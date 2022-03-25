@@ -1,12 +1,12 @@
 import { useState, useCallback, useEffect } from "react";
-import { idTaker } from "../../../Utils/IdTaker.utils";
-import { getPokemonInfo } from "../../Service/PokemonDetails.service";
-import useLanguage from "../Shared/useLanguage.hook";
-import usePokemon from "../Shared/usePokemon.hook";
+import { idTaker } from "../../../../Utils/IdTaker.utils";
+import { getPokemonInfo } from "../../../Services/PokemonDetails";
+import useLanguage from "../../../Hooks/useLanguage";
+import usePokemon from "../../../Hooks/usePokemon";
 
 const INITIAL_MODE = "details";
 
-const usePokemonDetails = () => {
+const useDetails = () => {
   const [mode, setMode] = useState<string>(INITIAL_MODE);
   const { pokemon, setPokemon } = usePokemon();
   const { lang } = useLanguage();
@@ -42,4 +42,4 @@ const usePokemonDetails = () => {
   };
 };
 
-export default usePokemonDetails;
+export default useDetails;

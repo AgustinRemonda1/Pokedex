@@ -1,15 +1,15 @@
 import React from "react";
 import { PokemonListContainer, SideGradientLayout } from "./PokemonList.styled";
-import useLanguage from "../../Core/Hooks/Shared/useLanguage.hook";
+import useLanguage from "../../Core/Hooks/useLanguage";
 import PokemonHeader from "../../Components/PokemonHeader/PokemonHeader";
 import PokemonFooter from "../../Components/PokemonFooter/PokemonFooter";
 import PokemonListContent from "../../Components/PokemonListContent/PokemonListContent";
-import { generateConfigWithLang } from "./PokemonList.config";
-import usePokemonList from "../../Core/Hooks/PokemonList/usePokemonList.hook";
+import { generateConfigWithLang } from "./Config";
+import { useListing } from "../../Core/Modules/Pokemon";
 
 const PokemonList = () => {
   const { language } = useLanguage();
-  const { state, actions } = usePokemonList();
+  const { state, actions } = useListing();
   const { pokemonListState, pagination } = state;
   const { onPagination, onSelectActiveImage, onShowPokemonDetails } = actions;
   const configParams = {

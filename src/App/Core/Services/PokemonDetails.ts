@@ -1,4 +1,4 @@
-import callPokeApiService from "./PokeApi.service";
+import callPokeApiService from "./PokeApi";
 
 export const getPokemon = async (id: number) => {
   const requestParams = {

@@ -2,13 +2,10 @@ import { useState, useCallback, useEffect } from "react";
 import {
   getPokemonList,
   getPokemonListWithDetails,
-} from "../../Service/PokemonList.service";
-import {
-  PokemonInterface,
-  PokemonWithDetailsInterface,
-} from "../../Interfaces/Pokemon.interface";
-import { getPokemonImage } from "./getPokemonImage.utils";
-import usePokemon from "../Shared/usePokemon.hook";
+} from "../../../Services/PokemonList";
+import { PokemonInterface, PokemonWithDetailsInterface } from "../Interfaces";
+import { getPokemonImage } from "./Utils";
+import usePokemon from "../../../Hooks/usePokemon";
 
 interface PokemonListStateInterface {
   list: PokemonInterface[];
@@ -34,11 +31,13 @@ const INITIAL_PAGINATION: PaginationState = {
   total: 0,
 };
 
-const usePokemonList = () => {
-  const [pokemonListState, setPokemonListState] =
-    useState<PokemonListStateInterface>(INITIAL_STATE);
-  const [pagination, setPagination] =
-    useState<PaginationState>(INITIAL_PAGINATION);
+const useListing = () => {
+  const [pokemonListState, setPokemonListState] = useState<
+    PokemonListStateInterface
+  >(INITIAL_STATE);
+  const [pagination, setPagination] = useState<PaginationState>(
+    INITIAL_PAGINATION
+  );
   const { setPokemon } = usePokemon();
 
   useEffect(() => {
@@ -105,4 +104,4 @@ const usePokemonList = () => {
   };
 };
 
-export default usePokemonList;
+export default useListing;

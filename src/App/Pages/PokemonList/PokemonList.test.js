@@ -6,7 +6,7 @@ import {
   PokemonListWithOutActivePokemonImage,
   PokemonListWithActivePokemonImage,
   PokemonListWithPokemonSelected,
-} from "./PokemonList.data";
+} from "./Data";
 import {
   PokemonListContainer,
   PokemonListGrid,

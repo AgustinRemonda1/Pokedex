@@ -11,7 +11,7 @@ import {
   configModeDetails,
   configModeStats,
   configModeAbilities,
-} from "./PokemonDetails.data";
+} from "./Data";
 import {
   PokemonDetailsContainer,
   PokemonDetailsGrid,
@@ -24,8 +24,8 @@ import {
 import Button from "../../Components/Shared/Button/Button";
 import SimpleFlexTable from "../../Components/Shared/SimpleFlexTable/SimpleFlexTable";
 import { language } from "../../Config/Lang/Lang.language";
-import { switchConfigMode } from "./PokemonDetails.utils";
-import { modes } from "./PokemonDetails.config";
+import { switchConfigMode } from "./Utils";
+import { modes } from "./Config";
 
 describe("PokemonDetails", () => {
   it("should contain <PokemonDetailsContent />", () => {

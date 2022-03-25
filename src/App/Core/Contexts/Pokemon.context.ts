@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { PokemonWithDetailsInterface } from "../Interfaces/Pokemon.interface";
+import { PokemonWithDetailsInterface } from "../Modules/Pokemon/Interfaces";
 
 interface PokemonContextInterface {
   pokemon: PokemonWithDetailsInterface | null;
