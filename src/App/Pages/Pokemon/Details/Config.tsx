@@ -20,7 +20,7 @@ export const generateDetailsConfig = ({ language, pokemon, lang }: any) => {
     {
       title: language.type,
       data: pokemon.types.map((item: any, index: number) => (
-        <p key={index}>{language[item.type.name]}</p>
+        <p key={index}>{item.type.name}</p>
       )),
     },
     {
@@ -36,12 +36,8 @@ export const generateDetailsConfig = ({ language, pokemon, lang }: any) => {
         : Math.round(pokemon.weight / 10) + " kgs",
     },
     {
-      title: language.numberOfBattles,
-      data: pokemon.game_indices.length,
-    },
-    {
-      title: language.experiencePoints,
-      data: pokemon.base_experience,
+      title: language.description,
+      data: pokemon.description,
     },
   ];
 };

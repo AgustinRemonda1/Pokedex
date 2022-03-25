@@ -3,9 +3,17 @@ export interface PokemonInterface {
   url: string;
 }
 
-interface AbilityInterface {
+export interface AbilityInterface {
   ability: {
     name: string;
+    url: string;
+  };
+}
+
+export interface TypeInterface {
+  type: {
+    name: string;
+    url: string;
   };
 }
 
@@ -25,8 +33,10 @@ interface SpriteInterface {
 interface SpeciesInterface {
   url: string;
 }
+
 export interface PokemonWithDetailsInterface {
   abilities: AbilityInterface[];
+  types: TypeInterface[];
   name: string;
   height: number;
   weight: number;
@@ -35,4 +45,5 @@ export interface PokemonWithDetailsInterface {
   base_experience: number;
   stats: StatInterface[];
   species: SpeciesInterface;
+  description?: string;
 }

@@ -1,15 +1,6 @@
 import callPokeApiService from "./PokeApi";
-
-export const getPokemon = async (id: number) => {
-  const requestParams = {
-    endpoint: "/pokemon",
-    id: `/${id}`,
-  };
-
-  const data = await callPokeApiService(requestParams);
-
-  return data;
-};
+import { AbilityInterface, TypeInterface } from "../Modules/Pokemon/Interfaces";
+import { idTaker } from "../../Utils/IdTaker.utils";
 
 interface Data {
   flavor_text_entries: {
@@ -21,6 +12,21 @@ interface Data {
     genus: string;
   }[];
 }
+
+interface TraductionInterface {
+  name: string;
+}
+
+export const getPokemon = async (id: number) => {
+  const requestParams = {
+    endpoint: "/pokemon",
+    id: `/${id}`,
+  };
+
+  const data = await callPokeApiService(requestParams);
+
+  return data;
+};
 
 const getDescription = (data: Data, language: string) => {
   const entries = data.flavor_text_entries;
@@ -40,13 +46,7 @@ export const getPokemonInfo = async (id: string | number, language: string) => {
 
   const description = getDescription(data, language);
 
-  const genera = data.genera;
-  const genus = genera.find(
-    (pokemon: any) => pokemon.language.name === language
-  );
-  const specie = genus;
-
-  return { description, specie };
+  return { description: String(description) };
 };
 
 export const getAbility = async (id: string | number, language: string) => {
@@ -64,4 +64,42 @@ export const getAbility = async (id: string | number, language: string) => {
   return ability;
 };
 
-export const getTypes = () => {};
+export const getAbilities = async (
+  abilities: AbilityInterface[],
+  language: string
+) => {
+  const newAbilities: TraductionInterface[] = [];
+  const urls = abilities.map((ability) => ability.ability.url);
+  const ids = urls.map((url) => idTaker(url));
+
+  await ids.forEach((id) =>
+    getAbility(id, language).then((ability) => newAbilities.push(ability))
+  );
+
+  return newAbilities;
+};
+
+export const getType = async (id: string | number, language: string) => {
+  const requestParams = {
+    endpoint: "/type",
+    id: `/${id}`,
+  };
+
+  const data = await callPokeApiService(requestParams);
+
+  const type = data.names.find((name: any) => name.language.name === language);
+
+  return type;
+};
+
+export const getTypes = async (Types: TypeInterface[], language: string) => {
+  const newTypes: TraductionInterface[] = [];
+  const urls = Types.map((type) => type.type.url);
+  const ids = urls.map((url) => idTaker(url));
+
+  await ids.forEach((id) =>
+    getType(id, language).then((type) => newTypes.push(type))
+  );
+
+  return newTypes;
+};
