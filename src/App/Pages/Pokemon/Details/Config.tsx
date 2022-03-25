@@ -3,11 +3,11 @@ import {
   capitalizeStrings,
   slugToText,
 } from "../../../Utils/FormatStrings.utils";
-import DetailsIcon from "../../Assets/Icons/note-text-outline.svg";
-import StatsIcon from "../../Assets/Icons/chart-box-outline.svg";
-import AbilitiesIcon from "../../Assets/Icons/beaker-check-outline.svg";
-import LangIcon from "../../Assets/Icons/translate.svg";
-import BackIcon from "../../Assets/Icons/arrow-left.svg";
+import DetailsIcon from "../../../Assets/Icons/note-text-outline.svg";
+import StatsIcon from "../../../Assets/Icons/chart-box-outline.svg";
+import AbilitiesIcon from "../../../Assets/Icons/beaker-check-outline.svg";
+import LangIcon from "../../../Assets/Icons/translate.svg";
+import BackIcon from "../../../Assets/Icons/arrow-left.svg";
 
 export const generateDetailsConfig = ({ language, pokemon, lang }: any) => {
   const isEnglishLanguage = language.en === lang;

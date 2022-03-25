@@ -1,4 +1,4 @@
-import PokeballIcon from "../../Assets/Icons/pokeball.svg";
+import PokeballIcon from "../../../Assets/Icons/pokeball.svg";
 
 export const generateConfigWithLang = (configParams: any) => {
   const { language, onShowPokemonDetails } = configParams;
