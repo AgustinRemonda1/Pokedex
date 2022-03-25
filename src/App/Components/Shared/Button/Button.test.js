@@ -6,7 +6,7 @@ import {
   buttonWithTooltip,
   normalButton,
   smallNormalButton,
-} from "./Button.data";
+} from "./Data";
 import { StyledButton, SingleButton, Text } from "./Button.styled";
 import { ReactSVG } from "react-svg";
 import Tooltip from "../Tooltip/Tooltip";
@@ -39,7 +39,12 @@ describe("Button", () => {
   it("Should render 'A simple string'", () => {
     const wrapper = shallow(<Button {...normalButton} />);
 
-    expect(wrapper.find(Text).first().text()).toEqual(text);
+    expect(
+      wrapper
+        .find(Text)
+        .first()
+        .text()
+    ).toEqual(text);
   });
 
   it("Should render 'A simple string' in tooltip", () => {

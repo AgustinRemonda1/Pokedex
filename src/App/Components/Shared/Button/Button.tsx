@@ -1,7 +1,7 @@
 import React, { FC, ReactNode } from "react";
 import { ReactSVG } from "react-svg";
 import Tooltip from "../Tooltip/Tooltip";
-import { buttonTypes } from "./Button.config";
+import { buttonTypes } from "./Config";
 import { StyledButton, SingleButton, Text } from "./Button.styled";
 
 export interface ButtonProps {

@@ -1,13 +1,13 @@
 import React, { useMemo } from "react";
-import PokemonDetailsContent from "../../Components/PokemonDetailsContent";
-import PokemonImageDetails from "../../Components/PokemonImageDetails";
-import { useDetails } from "../../Core/Modules/Pokemon";
-import useLanguage from "../../Core/Hooks/useLanguage";
+import PokemonDetailsContent from "../../../Components/PokemonDetailsContent";
+import PokemonImageDetails from "../../../Components/PokemonImageDetails";
+import { useDetails } from "../../../Core/Modules/Pokemon";
+import useLanguage from "../../../Core/Hooks/useLanguage";
 import { modes, generateButtonModes, generateActionButtons } from "./Config";
-import { PokemonDetailsContainer } from "./PokemonDetails.styled";
+import { PokemonDetailsContainer } from "./Details.styled";
 import { switchConfigMode } from "./Utils";
 
-const PokemonDetails = () => {
+const Details = () => {
   const { language, changeLanguage, lang } = useLanguage();
   const { state, actions } = useDetails();
   const { mode, pokemon } = state;
@@ -42,4 +42,4 @@ const PokemonDetails = () => {
   );
 };
 
-export default PokemonDetails;
+export default Details;

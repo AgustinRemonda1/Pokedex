@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { SCREEN_MD_MIN } from "../../Styles/Breakpoints.styles";
+import { SCREEN_MD_MIN } from "../../../Styles/Breakpoints.styles";
 import {
   MINE_SHAFT,
   NEON_CARROT,
   OUTRAGEOUS_ORANGE,
   WHITE,
-} from "../../Styles/Colors.styles";
+} from "../../../Styles/Colors.styles";
 
 export const PokemonListContainer = styled.div`
   position: relative;

@@ -2,7 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import TableComponent from "./Table";
 import { TableContainer, Table } from "./Table.styled";
-import { formatPokemonNumber } from "./Table.utils";
+import { formatPokemonNumber } from "./Utils";
 import Button from "../Button/Button";
 import TablePagination from "../TablePagination/TablePagination";
 import { firstTableTestProps, secondTableTestProps } from "./Table.data";

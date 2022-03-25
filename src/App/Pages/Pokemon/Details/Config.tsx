@@ -1,5 +1,8 @@
 import React from "react";
-import { capitalizeStrings, slugToText } from "../../Utils/FormatStrings.utils";
+import {
+  capitalizeStrings,
+  slugToText,
+} from "../../../Utils/FormatStrings.utils";
 import DetailsIcon from "../../Assets/Icons/note-text-outline.svg";
 import StatsIcon from "../../Assets/Icons/chart-box-outline.svg";
 import AbilitiesIcon from "../../Assets/Icons/beaker-check-outline.svg";

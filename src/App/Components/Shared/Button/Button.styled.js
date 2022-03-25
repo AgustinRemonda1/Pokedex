@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { SCREEN_SM_MIN } from "../../../Styles/Breakpoints.styles";
 import { BLACK, BLAZE_ORANGE, WHITE } from "../../../Styles/Colors.styles";
-import { buttonTypes } from "./Button.config";
+import { buttonTypes } from "./Config";
 
 export const StyledButton = styled.button`
   cursor: pointer;

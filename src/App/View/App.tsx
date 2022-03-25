@@ -1,9 +1,9 @@
 import React from "react";
-import PokemonList from "../Pages/PokemonList";
+import Listing from "../Pages/Pokemon/Listing";
+import Details from "../Pages/Pokemon/Details";
 import LanguageProvider from "../HOC/LangProvider";
 import "../Styles/Base.styles.css";
 import { PokemonContext } from "../Core/Contexts/Pokemon.context";
-import PokemonDetails from "../Pages/PokemonDetails";
 import PokemonProvider from "../HOC/PokemonProvider";
 
 const App = () => {
@@ -11,7 +11,7 @@ const App = () => {
     <LanguageProvider>
       <PokemonProvider>
         <PokemonContext.Consumer>
-          {({ pokemon }) => (pokemon ? <PokemonDetails /> : <PokemonList />)}
+          {({ pokemon }) => (pokemon ? <Details /> : <Listing />)}
         </PokemonContext.Consumer>
       </PokemonProvider>
     </LanguageProvider>

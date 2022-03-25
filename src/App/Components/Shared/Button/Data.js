@@ -1,4 +1,4 @@
-import { buttonTypes } from "./Button.config";
+import { buttonTypes } from "./Config";
 
 export const text = "A simple string";
 const action = jest.fn();

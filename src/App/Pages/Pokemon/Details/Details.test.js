@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 import PokemonDetailsContent from "./PokemonDetails.content";
-import PokemonDetails from "./PokemonDetails";
+import Details from "./Details";
 import {
   pokemonDetailsContentPropsBase,
   pokemonDetailsProps,
@@ -20,16 +20,16 @@ import {
   PokemonDetailLayoutTable,
   HeaderButtonsContainer,
   FooterButtonsContainer,
-} from "./PokemonDetails.styled";
-import Button from "../../Components/Shared/Button/Button";
-import SimpleFlexTable from "../../Components/Shared/SimpleFlexTable/SimpleFlexTable";
-import { language } from "../../Config/Lang/Lang.language";
+} from "./Details.styled";
+import Button from "../../../Components/Shared/Button/Button";
+import SimpleFlexTable from "../../../Components/Shared/SimpleFlexTable/SimpleFlexTable";
+import { language } from "../../../Config/Lang/Lang.language";
 import { switchConfigMode } from "./Utils";
 import { modes } from "./Config";
 
-describe("PokemonDetails", () => {
+describe("Details", () => {
   it("should contain <PokemonDetailsContent />", () => {
-    const wrapper = shallow(<PokemonDetails {...pokemonDetailsProps} />);
+    const wrapper = shallow(<Details {...pokemonDetailsProps} />);
 
     expect(wrapper.find(PokemonDetailsContent).length).toBe(1);
   });

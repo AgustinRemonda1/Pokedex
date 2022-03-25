@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import PokemonList from "./PokemonList";
+import Listing from "./Listing";
 import PokemonListContent from "./PokemonList.content";
 import {
   PokemonListWithOutActivePokemonImage,
@@ -18,15 +18,15 @@ import {
   ImageWrapper,
   NumberTitle,
   Footer,
-} from "./PokemonList.styled";
-import PokemonDetails from "../PokemonDetails/PokemonDetails";
+} from "./Listing.styled";
+import PokemonDetails from "../Details/Details";
 import { idTaker } from "./PokemonList.utils";
-import { pokemonList } from "../../Assets/Test/Data/Pokemon.data";
-import Button from "../../Components/Shared/Button/Button";
+import { pokemonList } from "../../../Assets/Test/Data/Pokemon.data";
+import Button from "../../../Components/Shared/Button/Button";
 
 describe("PokemonList", () => {
   it("should contain <PokemonListContent />", () => {
-    const wrapper = shallow(<PokemonList />);
+    const wrapper = shallow(<Listing />);
 
     expect(wrapper.find(PokemonListContent).length).toBe(1);
   });

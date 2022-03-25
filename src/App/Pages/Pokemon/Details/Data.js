@@ -1,5 +1,5 @@
-import { pokemonListWithDetails } from "../../Assets/Test/Data/Pokemon.data";
-import { language as lang } from "../../Config/Lang/Lang.language";
+import { pokemonListWithDetails } from "../../../Assets/Test/Data/Pokemon.data";
+import { language as lang } from "../../../Config/Lang/Lang.language";
 import {
   generateButtonModes,
   modes,

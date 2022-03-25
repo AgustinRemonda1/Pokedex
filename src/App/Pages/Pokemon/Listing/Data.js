@@ -1,7 +1,7 @@
 import {
   pokemonList,
   pokemonListWithDetails,
-} from "../../Assets/Test/Data/Pokemon.data";
+} from "../../../Assets/Test/Data/Pokemon.data";
 
 const pokemonSelected = pokemonListWithDetails[0];
 const activeImage = pokemonSelected.sprites.other.dream_world.front_default;

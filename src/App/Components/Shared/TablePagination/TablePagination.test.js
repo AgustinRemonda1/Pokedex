@@ -5,8 +5,8 @@ import {
   TablePaginationContainer,
   TablePaginationButton,
 } from "./TablePagination.styled";
-import { calculatePageNumbers } from "./TablePagination.utils";
-import { paginationTestData } from "./TablePagination.data";
+import { calculatePageNumbers } from "./Utils";
+import { paginationTestData } from "./Data";
 
 describe("TablePagination", () => {
   it("Check TablePagination structure", () => {

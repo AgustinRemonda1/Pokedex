@@ -2,7 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import SimpleFlexTable from "./SimpleFlexTable";
 import { FlexTable, FlexRow } from "./SimpleFlexTable.styled";
-import { firstConfigToTest, secondConfigToTest } from "./SimpleFlexTable.data";
+import { firstConfigToTest, secondConfigToTest } from "./Data";
 
 describe("SimpleFlexTable", () => {
   it("Check SimpleFlexTable structure", () => {

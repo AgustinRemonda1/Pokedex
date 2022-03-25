@@ -1,8 +1,8 @@
 import React, { FC } from "react";
-import Button, { ButtonProps } from "../Shared/Button/Button";
+import Button, { ButtonProps } from "../Shared/Button";
 import SimpleFlexTable, {
   FlexTableConfigInterface,
-} from "../Shared/SimpleFlexTable/SimpleFlexTable";
+} from "../Shared/SimpleFlexTable";
 import {
   PokemonDetailsGrid,
   PokemonDetailLayoutTable,

@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { SCREEN_MD_MIN } from "../../Styles/Breakpoints.styles";
-import { MINE_SHAFT } from "../../Styles/Colors.styles";
+import { SCREEN_MD_MIN } from "../../../Styles/Breakpoints.styles";
+import { MINE_SHAFT } from "../../../Styles/Colors.styles";
 
 export const PokemonDetailsContainer = styled.div`
   display: flex;

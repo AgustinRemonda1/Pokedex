@@ -1,7 +1,7 @@
 import React from "react";
 import { Footer } from "./PokemonFooter.styled";
 import LangIcon from "../../Assets/Icons/translate.svg";
-import Button from "../Shared/Button/Button";
+import Button from "../Shared/Button";
 import useLanguage from "../../Core/Hooks/useLanguage";
 
 const PokemonFooter = () => {
