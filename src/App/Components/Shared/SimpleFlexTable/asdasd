@@ -1,7 +1,7 @@
-import React from "react";
+/*import React from "react";
 import { shallow } from "enzyme";
 import PokemonDetailsContent from "./PokemonDetails.content";
-import Details from "./Details";
+import Details from "../../../Pages/Pokemon/Details/Details";
 import {
   pokemonDetailsContentPropsBase,
   pokemonDetailsProps,
@@ -20,12 +20,12 @@ import {
   PokemonDetailLayoutTable,
   HeaderButtonsContainer,
   FooterButtonsContainer,
-} from "./Details.styled";
-import Button from "../../../Components/Shared/Button/Button";
-import SimpleFlexTable from "../../../Components/Shared/SimpleFlexTable/SimpleFlexTable";
+} from "../../../Pages/Pokemon/Details/Details.styled";
+import Button from "../Button/Button";
+import SimpleFlexTable from "./SimpleFlexTable";
 import { language } from "../../../Config/Lang/Lang.language";
-import { switchConfigMode } from "./Utils";
-import { modes } from "./Config";
+import { switchConfigMode } from "../../../Pages/Pokemon/Details/Utils";
+import { modes } from "../../../Pages/Pokemon/Details/Config";
 
 describe("Details", () => {
   it("should contain <PokemonDetailsContent />", () => {
@@ -122,4 +122,4 @@ describe("Details", () => {
 
     expect(abilities).toEqual(configModeAbilities);
   });
-});
+});*/

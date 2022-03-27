@@ -6,6 +6,7 @@ import useLanguage from "../../../Core/Hooks/useLanguage";
 import { modes, generateButtonModes, generateActionButtons } from "./Config";
 import { PokemonDetailsContainer } from "./Details.styled";
 import { switchConfigMode } from "./Utils";
+import { ButtonProps } from "../../../Components/Shared/Button";
 
 const Details = () => {
   const { language, changeLanguage, lang } = useLanguage();
@@ -33,8 +34,10 @@ const Details = () => {
   return (
     <PokemonDetailsContainer>
       <PokemonDetailsContent
-        modeButtons={modeButtons}
-        pokemonDetailsFooterButtons={pokemonDetailsFooterButtons}
+        modeButtons={modeButtons as ButtonProps[]}
+        pokemonDetailsFooterButtons={
+          pokemonDetailsFooterButtons as ButtonProps[]
+        }
         configMode={configMode}
       />
       <PokemonImageDetails pokemon={pokemon} />

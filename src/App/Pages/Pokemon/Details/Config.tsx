@@ -8,6 +8,7 @@ import StatsIcon from "../../../Assets/Icons/chart-box-outline.svg";
 import AbilitiesIcon from "../../../Assets/Icons/beaker-check-outline.svg";
 import LangIcon from "../../../Assets/Icons/translate.svg";
 import BackIcon from "../../../Assets/Icons/arrow-left.svg";
+import { LanguageInterface } from "../../../Config/Lang/Lang.language";
 
 export const generateDetailsConfig = ({ language, pokemon, lang }: any) => {
   const isEnglishLanguage = language.en === lang;
@@ -84,7 +85,17 @@ export const modes = {
   abilities: "abilities",
 };
 
-export const generateButtonModes = ({ language, onChangeMode, mode }: any) => {
+interface GenerateModeButtonsInterface {
+  language: LanguageInterface;
+  onChangeMode: (mode: string) => void;
+  mode: string;
+}
+
+export const generateButtonModes = ({
+  language,
+  onChangeMode,
+  mode,
+}: GenerateModeButtonsInterface) => {
   return [
     {
       icon: DetailsIcon,
@@ -110,24 +121,29 @@ export const generateButtonModes = ({ language, onChangeMode, mode }: any) => {
   ];
 };
 
+interface GenerateActionButtonInterface {
+  language: LanguageInterface;
+  lang: string;
+  changeLanguage: (lang: string) => void;
+  onBackToPokemonDetails: () => void;
+}
+
 export const generateActionButtons = ({
   language,
   lang,
   changeLanguage,
   onBackToPokemonDetails,
-}: any) => {
+}: GenerateActionButtonInterface) => {
   return [
     {
       icon: BackIcon,
       text: language.back,
       action: onBackToPokemonDetails,
-      tooltipDisabled: true,
     },
     {
       icon: LangIcon,
       text: lang === language.es ? language.en : language.es,
       action: changeLanguage,
-      tooltipDisabled: true,
     },
   ];
 };

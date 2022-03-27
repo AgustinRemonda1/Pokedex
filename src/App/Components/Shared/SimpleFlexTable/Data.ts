@@ -6,7 +6,7 @@ import {
   generateDetailsConfig,
   generateAbilitiesConfig,
   generateStatsConfig,
-} from "./Config";
+} from "../../../Pages/Pokemon/Details/Config";
 
 const pokemonSelected = pokemonListWithDetails[0];
 const handleBackToPokemonList = jest.fn();
@@ -20,7 +20,7 @@ export const configParams = {
 
 const modeButtonDetails = generateButtonModes({
   language,
-  setMode: jest.fn(),
+  onChangeMode: jest.fn(),
   mode: modes.details,
 });
 
@@ -28,7 +28,7 @@ export const configModeDetails = generateDetailsConfig(configParams);
 
 const modeButtonStats = generateButtonModes({
   language,
-  setMode: jest.fn(),
+  onChangeMode: jest.fn(),
   mode: modes.stats,
 });
 
@@ -36,7 +36,7 @@ export const configModeStats = generateStatsConfig(configParams);
 
 const modeButtonAbilities = generateButtonModes({
   language,
-  setMode: jest.fn(),
+  onChangeMode: jest.fn(),
   mode: modes.abilities,
 });
 

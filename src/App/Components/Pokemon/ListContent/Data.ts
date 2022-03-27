@@ -2,9 +2,16 @@ import {
   pokemonList,
   pokemonListWithDetails,
 } from "../../../Assets/Test/Data/Pokemon.data";
+import { generateConfigWithLang } from "../../../Pages/Pokemon/Listing/Config";
+import ES from "../../../Config/Lang/Es.language";
 
 const pokemonSelected = pokemonListWithDetails[0];
-const activeImage = pokemonSelected.sprites.other.dream_world.front_default;
+export const activeImage =
+  pokemonSelected.sprites.other.dream_world.front_default;
+const config = generateConfigWithLang({
+  language: ES,
+  onShowPokemonDetails: jest.fn(),
+});
 
 export const PokemonListWithOutActivePokemonImage = {
   pokemonList,
@@ -13,6 +20,10 @@ export const PokemonListWithOutActivePokemonImage = {
   pokemonSelected: null,
   page: 1,
   total: 100,
+  onSelectActiveImage: jest.fn(),
+  onPagination: jest.fn(),
+  config: config,
+  perPage: 5,
 };
 
 export const PokemonListWithActivePokemonImage = {
@@ -22,6 +33,10 @@ export const PokemonListWithActivePokemonImage = {
   pokemonSelected: null,
   page: 1,
   total: 100,
+  onSelectActiveImage: jest.fn(),
+  onPagination: jest.fn(),
+  config: config,
+  perPage: 5,
 };
 
 export const PokemonListWithPokemonSelected = {
@@ -31,4 +46,8 @@ export const PokemonListWithPokemonSelected = {
   pokemonSelected,
   page: 1,
   total: 100,
+  onSelectActiveImage: jest.fn(),
+  onPagination: jest.fn(),
+  config: config,
+  perPage: 5,
 };

@@ -5,6 +5,10 @@ import {
 } from "../../../Styles/Breakpoints.styles";
 import { BLACK, BLAZE_ORANGE, WHITE } from "../../../Styles/Colors.styles";
 
+interface PaginationButton {
+  active?: boolean;
+}
+
 export const TablePaginationContainer = styled.ul`
   display: flex;
   list-style: none;
@@ -18,7 +22,7 @@ export const TablePaginationContainer = styled.ul`
   }
 `;
 
-export const TablePaginationButton = styled.li`
+export const TablePaginationButton = styled.li<PaginationButton>`
   margin: 6em 0.25em 0;
   button {
     color: ${BLACK};
