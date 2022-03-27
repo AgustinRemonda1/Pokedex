@@ -1,6 +1,6 @@
 import callPokeApiService from "./PokeApi";
 import { AbilityInterface, TypeInterface } from "../Modules/Pokemon/Interfaces";
-import { idTaker } from "../../Utils/IdTaker.utils";
+import { idTaker } from "../../Utils";
 
 interface Data {
   flavor_text_entries: {

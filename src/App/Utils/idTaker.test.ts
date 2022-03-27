@@ -1,7 +1,7 @@
-import { idTaker } from "../../../Utils/IdTaker.utils";
-import { pokemonList } from "../../../Assets/Test/Data/Pokemon.data";
+import { idTaker } from ".";
+import { pokemonList } from "../Assets/Test/Data/Pokemon.data";
 
-describe("Listing", () => {
+describe("idTaker", () => {
   it("Should take pokemon id from url", () => {
     const url = pokemonList[0].url;
     const id = idTaker(url);

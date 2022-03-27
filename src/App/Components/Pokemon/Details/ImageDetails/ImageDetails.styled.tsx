@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { SCREEN_MD_MIN } from "../../../Styles/Breakpoints.styles";
-import { BLACK, WHITE } from "../../../Styles/Colors.styles";
+import { SCREEN_MD_MIN } from "../../../../Styles/Breakpoints.styles";
+import { BLACK, WHITE } from "../../../../Styles/Colors.styles";
 
 export const PokemonImageWrapper = styled.div`
   flex: 0 0 45%;

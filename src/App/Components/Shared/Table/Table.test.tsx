@@ -1,49 +1,41 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import TableComponent from "./Table";
-import { TableContainer, Table } from "./Table.styled";
 import { formatPokemonNumber } from "./Utils";
-import Button from "../Button/Button";
-import TablePagination from "../TablePagination/TablePagination";
-import { firstTableTestProps, secondTableTestProps } from "./Table.data";
+import { tableTestProps } from "./Data";
 
 describe("Table", () => {
-  it("Check Table structure", () => {
-    const wrapper = shallow(<TableComponent {...firstTableTestProps} />);
+  it("show Charmander when components its rendered", () => {
+    const component = render(<TableComponent {...tableTestProps} />);
 
-    expect(wrapper.find(TableContainer).length).toBe(1);
-    expect(wrapper.find(Table).length).toBe(1);
-    expect(wrapper.find("tr").length).toBe(5);
-    expect(wrapper.find("td").length).toBe(15);
-    expect(wrapper.find(Button).length).toBe(5);
-    expect(wrapper.find(TablePagination).length).toBe(1);
-  });
-  it("Should render five rows", () => {
-    const wrapper = shallow(<TableComponent {...firstTableTestProps} />);
+    const pokemon = component.queryByText(/Charmander/i);
 
-    expect(wrapper.find("tr").length).toBe(5);
+    expect(pokemon).not.toBeNull();
   });
-  it("Should render ten rows", () => {
-    const wrapper = shallow(<TableComponent {...secondTableTestProps} />);
 
-    expect(wrapper.find("tr").length).toBe(10);
-  });
-  it("Should render ten buttons", () => {
-    const wrapper = shallow(<TableComponent {...secondTableTestProps} />);
+  it("show pokemon number when component its rendered", () => {
+    const component = render(<TableComponent {...tableTestProps} />);
 
-    expect(wrapper.find(Button).length).toBe(10);
-  });
-  it("Should be in page one", () => {
-    const wrapper = shallow(<TableComponent {...firstTableTestProps} />);
+    const pokemonNumber = component.queryByText(/Nº 003/i);
 
-    expect(wrapper.find(TablePagination).props().page).toBe(1);
+    expect(pokemonNumber).not.toBeNull();
   });
+
+  it("show details button when component its rendered", async () => {
+    const component = render(<TableComponent {...tableTestProps} />);
+
+    const detailsButtons = await component.findAllByText(/Detalles/i);
+
+    expect(detailsButtons.length).toBe(5);
+  });
+
   it("Should return pokemon number formatted and with 3 digits", () => {
     const pokemonNumber = 3;
     const expected = "Nº 003";
 
     expect(formatPokemonNumber(pokemonNumber)).toBe(expected);
   });
+
   it("Should return pokemon number formatted and with more 3 digits", () => {
     const pokemonNumber = 11000;
     const expected = "Nº 11000";

@@ -1,4 +1,4 @@
-import { pokemonListWithDetails } from "../../../Assets/Test/Data/Pokemon.data";
+import { pokemonListWithDetails } from "../../../../Assets/Test/Data/Pokemon.data";
 
 export const pokemonSelected = pokemonListWithDetails[0];
 export const activeImage =

@@ -1,5 +1,5 @@
 import AppConfig from "../../Config/App.config";
-import endpointBuilder from "../../Utils/EndpointBuilder.utils";
+import { endpointBuilder } from "../../Utils";
 
 interface ApiRequest {
   endpoint: string;

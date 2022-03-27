@@ -1,8 +1,8 @@
 import React from "react";
 import { PokemonFooter } from "./Footer.styled";
-import LangIcon from "../../../Assets/Icons/translate.svg";
-import Button from "../../Shared/Button";
-import useLanguage from "../../../Core/Hooks/useLanguage";
+import LangIcon from "../../../../Assets/Icons/translate.svg";
+import Button from "../../../Shared/Button";
+import useLanguage from "../../../../Core/Hooks/useLanguage";
 
 const Footer = () => {
   const { language, changeLanguage, lang } = useLanguage();

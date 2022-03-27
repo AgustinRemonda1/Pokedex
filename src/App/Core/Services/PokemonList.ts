@@ -3,7 +3,7 @@ import {
   PokemonInterface,
   PokemonWithDetailsInterface,
 } from "../Modules/Pokemon/Interfaces";
-import { idTaker } from "../../Utils/IdTaker.utils";
+import { idTaker } from "../../Utils";
 import { getPokemon } from "./PokemonDetails";
 
 const PER_PAGE = 5;

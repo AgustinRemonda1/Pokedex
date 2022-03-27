@@ -1,55 +1,34 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import Button from "./Button";
-import {
-  text,
-  buttonWithTooltip,
-  normalButton,
-  smallNormalButton,
-} from "./Data";
-import { StyledButton, SingleButton, Text } from "./Button.styled";
-import { ReactSVG } from "react-svg";
-import Tooltip from "../Tooltip/Tooltip";
+import { buttonWithTooltip, normalButton, smallNormalButton } from "./Data";
 
 describe("Button", () => {
-  it("Check Button structure with tooltip", () => {
-    const wrapper = shallow(<Button {...buttonWithTooltip} />);
-
-    expect(wrapper.find(Tooltip).length).toBe(1);
-    expect(wrapper.find(StyledButton).length).toBe(1);
-    expect(wrapper.find(ReactSVG).length).toBe(1);
-  });
-
-  it("Should have a small normal button type", () => {
-    const wrapper = shallow(<Button {...smallNormalButton} />);
-
-    expect(wrapper.find(SingleButton).props().type).toBe(
-      smallNormalButton.type
+  it("show text in button with tooltip when component its rendered", () => {
+    const component = render(
+      <Button {...buttonWithTooltip} type="button-with-tooltip" />
     );
+
+    const button = component.queryByText(/a simple string/i);
+
+    expect(button).not.toBeNull();
   });
 
-  it("Check Button structure without tooltip", () => {
-    const wrapper = shallow(<Button {...normalButton} />);
+  it("show text in small normal button when component its rendered", () => {
+    const component = render(
+      <Button {...smallNormalButton} type="small-normal-button" />
+    );
 
-    expect(wrapper.find(SingleButton).length).toBe(1);
-    expect(wrapper.find(ReactSVG).length).toBe(1);
-    expect(wrapper.find(Text).length).toBe(1);
+    const button = component.queryByText(/a simple string/i);
+
+    expect(button).not.toBeNull();
   });
 
-  it("Should render 'A simple string'", () => {
-    const wrapper = shallow(<Button {...normalButton} />);
+  it("show button as small normal button when component its rendered", () => {
+    const component = render(<Button {...normalButton} />);
 
-    expect(
-      wrapper
-        .find(Text)
-        .first()
-        .text()
-    ).toEqual(text);
-  });
+    const button = component.queryByText(/a simple string/i);
 
-  it("Should render 'A simple string' in tooltip", () => {
-    const wrapper = shallow(<Button {...buttonWithTooltip} />);
-
-    expect(wrapper.find(Tooltip).props().msg).toEqual(text);
+    expect(button).not.toBeNull();
   });
 });

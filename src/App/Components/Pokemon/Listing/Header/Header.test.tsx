@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import Header from "./Header";
-import LanguageProvider from "../../../HOC/LangProvider";
+import LanguageProvider from "../../../../HOC/LangProvider";
 
 describe("Header", () => {
   it("show number word in spanish when component its rendered ", async () => {

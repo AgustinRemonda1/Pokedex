@@ -1,12 +1,12 @@
-import { pokemonListWithDetails } from "../../../Assets/Test/Data/Pokemon.data";
-import { language as lang } from "../../../Config/Lang/Lang.language";
+import { pokemonListWithDetails } from "../../../../Assets/Test/Data/Pokemon.data";
+import { language as lang } from "../../../../Config/Lang/Lang.language";
 import {
   generateButtonModes,
   modes,
   generateAbilitiesConfig,
   generateActionButtons,
-} from "../../../Pages/Pokemon/Details/Config";
-import { ButtonProps } from "../../Shared/Button";
+} from "../../../../Pages/Pokemon/Details/Config";
+import { ButtonProps } from "../../../Shared/Button";
 
 const pokemonSelected = pokemonListWithDetails[0];
 const language = lang.ES;

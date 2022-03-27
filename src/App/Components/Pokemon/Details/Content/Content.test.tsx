@@ -1,6 +1,6 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
-import DetailsContent from "./DetailsContent";
+import Content from "./Content";
 import {
   changeLanguage,
   DetailsContentProps,
@@ -8,9 +8,9 @@ import {
   onChangeMode,
 } from "./Data";
 
-describe("DetailsContent", () => {
+describe("Content", () => {
   it("show ability button when component its rendered ", async () => {
-    const component = render(<DetailsContent {...DetailsContentProps} />);
+    const component = render(<Content {...DetailsContentProps} />);
 
     const button = component.queryByText(/Habilidades/i);
 
@@ -18,7 +18,7 @@ describe("DetailsContent", () => {
   });
 
   it("show stadistic button when component its rendered ", async () => {
-    const component = render(<DetailsContent {...DetailsContentProps} />);
+    const component = render(<Content {...DetailsContentProps} />);
 
     const button = component.queryByText(/Estadisticas/i);
 
@@ -26,7 +26,7 @@ describe("DetailsContent", () => {
   });
 
   it("show details button when component its rendered ", async () => {
-    const component = render(<DetailsContent {...DetailsContentProps} />);
+    const component = render(<Content {...DetailsContentProps} />);
 
     const button = component.queryByText(/Detalles/i);
 
@@ -34,7 +34,7 @@ describe("DetailsContent", () => {
   });
 
   it("show back button when component its rendered ", async () => {
-    const component = render(<DetailsContent {...DetailsContentProps} />);
+    const component = render(<Content {...DetailsContentProps} />);
 
     const button = component.queryByText(/Volver/i);
 
@@ -42,7 +42,7 @@ describe("DetailsContent", () => {
   });
 
   it("show lang button when component its rendered ", async () => {
-    const component = render(<DetailsContent {...DetailsContentProps} />);
+    const component = render(<Content {...DetailsContentProps} />);
 
     const button = await component.findByText(/EN/);
 
@@ -50,7 +50,7 @@ describe("DetailsContent", () => {
   });
 
   it("call onChangeMode when ability button is clicked", async () => {
-    const component = render(<DetailsContent {...DetailsContentProps} />);
+    const component = render(<Content {...DetailsContentProps} />);
 
     const button = component.getByText(/Habilidades/i);
     fireEvent.click(button);
@@ -59,7 +59,7 @@ describe("DetailsContent", () => {
   });
 
   it("call onChangeMode when stadistic button is clicked ", async () => {
-    const component = render(<DetailsContent {...DetailsContentProps} />);
+    const component = render(<Content {...DetailsContentProps} />);
 
     const button = component.getByText(/Estadisticas/i);
     fireEvent.click(button);
@@ -68,7 +68,7 @@ describe("DetailsContent", () => {
   });
 
   it("call onChangeMode when details button is clicked", async () => {
-    const component = render(<DetailsContent {...DetailsContentProps} />);
+    const component = render(<Content {...DetailsContentProps} />);
 
     const button = component.getByText(/Detalles/i);
     fireEvent.click(button);
@@ -77,7 +77,7 @@ describe("DetailsContent", () => {
   });
 
   it("call changeLanguage when lang button is clicked", async () => {
-    const component = render(<DetailsContent {...DetailsContentProps} />);
+    const component = render(<Content {...DetailsContentProps} />);
 
     const button = await component.getByText(/EN/);
     fireEvent.click(button);
@@ -86,7 +86,7 @@ describe("DetailsContent", () => {
   });
 
   it("call onBackPokemonDetails when back button is clicked", async () => {
-    const component = render(<DetailsContent {...DetailsContentProps} />);
+    const component = render(<Content {...DetailsContentProps} />);
 
     const button = await component.getByText(/Volver/);
     fireEvent.click(button);

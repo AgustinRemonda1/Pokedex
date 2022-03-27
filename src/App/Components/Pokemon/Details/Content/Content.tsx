@@ -1,22 +1,22 @@
 import React, { FC } from "react";
-import Button, { ButtonProps } from "../../Shared/Button";
+import Button, { ButtonProps } from "../../../Shared/Button";
 import SimpleFlexTable, {
   FlexTableConfigInterface,
-} from "../../Shared/SimpleFlexTable";
+} from "../../../Shared/SimpleFlexTable";
 import {
   PokemonDetailsGrid,
   PokemonDetailLayoutTable,
   HeaderButtonsContainer,
   FooterButtonsContainer,
-} from "./DetailsContent.styled";
+} from "./Content.styled";
 
-interface DetailsContentProps {
+interface ContentProps {
   pokemonDetailsFooterButtons: ButtonProps[];
   modeButtons: ButtonProps[];
   configMode: FlexTableConfigInterface[];
 }
 
-const DetailsContent: FC<DetailsContentProps> = ({
+const Content: FC<ContentProps> = ({
   modeButtons,
   pokemonDetailsFooterButtons,
   configMode,
@@ -39,4 +39,4 @@ const DetailsContent: FC<DetailsContentProps> = ({
   );
 };
 
-export default DetailsContent;
+export default Content;

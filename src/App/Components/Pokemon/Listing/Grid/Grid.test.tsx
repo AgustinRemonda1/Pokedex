@@ -1,16 +1,16 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import ListContent from "../../../Components/Pokemon/ListContent";
+import Grid from "./Grid";
 import {
   PokemonListWithOutActivePokemonImage,
   PokemonListWithActivePokemonImage,
   activeImage,
 } from "./Data";
 
-describe("ListContent", () => {
+describe("Grid", () => {
   it("show charizard when component its rendered ", async () => {
     const component = render(
-      <ListContent {...PokemonListWithOutActivePokemonImage} />
+      <Grid {...PokemonListWithOutActivePokemonImage} />
     );
 
     const text = component.queryByText(/charizard/i);
@@ -19,9 +19,7 @@ describe("ListContent", () => {
   });
 
   it("show active image when has pokemon image selected ", async () => {
-    const component = render(
-      <ListContent {...PokemonListWithActivePokemonImage} />
-    );
+    const component = render(<Grid {...PokemonListWithActivePokemonImage} />);
 
     const pokemonActive = component.getByAltText(/pokemon-active/i);
     const pokemonImage = pokemonActive.getAttribute("src");
@@ -31,7 +29,7 @@ describe("ListContent", () => {
 
   it("hide active image when hasn`t pokemon image selected ", async () => {
     const component = render(
-      <ListContent {...PokemonListWithOutActivePokemonImage} />
+      <Grid {...PokemonListWithOutActivePokemonImage} />
     );
 
     const pokemonActive = component.queryByAltText(/pokemon-active/i);

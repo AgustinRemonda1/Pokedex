@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "@testing-library/react";
 import ImageDetails from "./ImageDetails";
 import { pokemonSelected, activeImage } from "./Data";
-import { capitalizeStrings } from "../../../Utils/FormatStrings.utils";
+import { capitalizeStrings } from "../../../../Utils/FormatStrings.utils";
 
 describe("ImageDetails", () => {
   it("show pokemon name when component its rendered ", async () => {

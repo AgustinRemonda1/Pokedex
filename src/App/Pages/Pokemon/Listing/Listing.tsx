@@ -1,9 +1,9 @@
 import React from "react";
 import { PokemonListContainer, SideGradientLayout } from "./Listing.styled";
 import useLanguage from "../../../Core/Hooks/useLanguage";
-import PokemonHeader from "../../../Components/Pokemon/Header";
-import PokemonFooter from "../../../Components/Pokemon/Footer";
-import PokemonListContent from "../../../Components/Pokemon/ListContent";
+import PokemonHeader from "../../../Components/Pokemon/Listing/Header";
+import PokemonFooter from "../../../Components/Pokemon/Listing/Footer";
+import PokemonGrid from "../../../Components/Pokemon/Listing/Grid";
 import { generateConfigWithLang } from "./Config";
 import { useListing } from "../../../Core/Modules/Pokemon";
 
@@ -20,7 +20,7 @@ const Listing = () => {
   return (
     <PokemonListContainer>
       <PokemonHeader />
-      <PokemonListContent
+      <PokemonGrid
         activePokemonImage={pokemonListState.activeImage}
         onSelectActiveImage={onSelectActiveImage}
         pokemonList={pokemonListState.list}

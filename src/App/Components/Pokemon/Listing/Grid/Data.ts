@@ -1,9 +1,9 @@
 import {
   pokemonList,
   pokemonListWithDetails,
-} from "../../../Assets/Test/Data/Pokemon.data";
-import { generateConfigWithLang } from "../../../Pages/Pokemon/Listing/Config";
-import ES from "../../../Config/Lang/Es.language";
+} from "../../../../Assets/Test/Data/Pokemon.data";
+import { generateConfigWithLang } from "../../../../Pages/Pokemon/Listing/Config";
+import ES from "../../../../Config/Lang/Es.language";
 
 const pokemonSelected = pokemonListWithDetails[0];
 export const activeImage =

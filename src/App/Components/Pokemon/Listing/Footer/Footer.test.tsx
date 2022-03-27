@@ -1,7 +1,7 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import Footer from "./Footer";
-import LanguageProvider from "../../../HOC/LangProvider";
+import LanguageProvider from "../../../../HOC/LangProvider";
 
 describe("Footer", () => {
   it("show ES word when component its rendered ", async () => {
