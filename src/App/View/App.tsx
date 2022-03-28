@@ -1,12 +1,19 @@
 import React from "react";
-import PokemonList from "../Components/PokemonList/PokemonList.component";
-import LanguageProvider from "../HOC/LangProvider/LangProvider.hoc";
-import "../Styles/Base.styles.css";
+import Listing from "../Pages/Pokemon/Listing";
+import Details from "../Pages/Pokemon/Details";
+import LanguageProvider from "../HOC/LangProvider";
+import "../Assets/Styles/Base.styles.css";
+import { PokemonContext } from "../Core/Contexts/Pokemon.context";
+import PokemonProvider from "../HOC/PokemonProvider";
 
 const App = () => {
   return (
     <LanguageProvider>
-      <PokemonList />
+      <PokemonProvider>
+        <PokemonContext.Consumer>
+          {({ pokemon }) => (pokemon ? <Details /> : <Listing />)}
+        </PokemonContext.Consumer>
+      </PokemonProvider>
     </LanguageProvider>
   );
 };
