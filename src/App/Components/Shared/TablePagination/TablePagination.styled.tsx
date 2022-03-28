@@ -2,8 +2,12 @@ import styled from "styled-components";
 import {
   SCREEN_MD_MIN,
   SCREEN_SM_MIN,
-} from "../../../Styles/Breakpoints.styles";
-import { BLACK, BLAZE_ORANGE, WHITE } from "../../../Styles/Colors.styles";
+} from "../../../Assets/Styles/Breakpoints.styles";
+import {
+  BLACK,
+  BLAZE_ORANGE,
+  WHITE,
+} from "../../../Assets/Styles/Colors.styles";
 
 interface PaginationButton {
   active?: boolean;

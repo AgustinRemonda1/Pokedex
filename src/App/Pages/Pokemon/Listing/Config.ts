@@ -1,8 +1,15 @@
 import PokeballIcon from "../../../Assets/Icons/pokeball.svg";
+import { LanguageInterface } from "../../../Config/Lang/Lang.language";
 
-export const generateConfigWithLang = (configParams: any) => {
-  const { language, onShowPokemonDetails } = configParams;
+interface ConfigWithLangInterface {
+  language: LanguageInterface;
+  onShowPokemonDetails: (pokemon: number) => void;
+}
 
+export const generateConfigWithLang = ({
+  language,
+  onShowPokemonDetails,
+}: ConfigWithLangInterface) => {
   return [
     {
       name: language.number,

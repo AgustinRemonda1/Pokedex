@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BLACK, WHITE } from "../../../Styles/Colors.styles";
+import { BLACK, WHITE } from "../../../Assets/Styles/Colors.styles";
 
 export const TooltipText = styled.div`
   cursor: pointer;

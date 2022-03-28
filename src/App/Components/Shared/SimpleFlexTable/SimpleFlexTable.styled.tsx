@@ -1,5 +1,10 @@
 import styled from "styled-components";
-import { BLACK, GRAY, SILVER, WHITE } from "../../../Styles/Colors.styles";
+import {
+  BLACK,
+  GRAY,
+  SILVER,
+  WHITE,
+} from "../../../Assets/Styles/Colors.styles";
 
 export const FlexTable = styled.div`
   margin-top: 0.75em;

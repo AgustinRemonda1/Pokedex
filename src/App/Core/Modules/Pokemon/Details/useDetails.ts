@@ -1,13 +1,7 @@
 import { useState, useCallback, useEffect } from "react";
-import { idTaker } from "../../../../Utils/IdTaker.utils";
-import {
-  getAbilities,
-  getPokemonInfo,
-  getTypes,
-} from "../../../Services/PokemonDetails";
+import { getPokemonWithTraslate } from "../../../Services/PokemonDetails";
 import useLanguage from "../../../Hooks/useLanguage";
 import usePokemon from "../../../Hooks/usePokemon";
-import { reeplaceTraduction } from "./Utils";
 
 const INITIAL_MODE = "details";
 
@@ -18,21 +12,8 @@ const useDetails = () => {
 
   useEffect(() => {
     const fetchPokemonInfo = async () => {
-      if (pokemon) {
-        const url = pokemon.species.url;
-        const pokemonID = idTaker(url);
-        const language = lang.toLowerCase();
-
-        const types = await getTypes(pokemon.types, language);
-        const abilities = await getAbilities(pokemon.abilities, language);
-        const info = await getPokemonInfo(pokemonID, language);
-
-        const pokemonTraduced = reeplaceTraduction({
-          pokemon,
-          types,
-          abilities,
-          info,
-        });
+      if (pokemon && lang) {
+        const pokemonTraduced = await getPokemonWithTraslate({ pokemon, lang });
 
         setPokemon(pokemonTraduced);
       }

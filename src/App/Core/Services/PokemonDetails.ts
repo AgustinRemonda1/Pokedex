@@ -1,6 +1,11 @@
 import callPokeApiService from "./PokeApi";
-import { AbilityInterface, TypeInterface } from "../Modules/Pokemon/Interfaces";
+import {
+  AbilityInterface,
+  PokemonWithDetailsInterface,
+  TypeInterface,
+} from "../Modules/Pokemon/Interfaces";
 import { idTaker } from "../../Utils";
+import { reeplaceTraduction } from "../Modules/Pokemon/Details";
 
 interface Data {
   flavor_text_entries: {
@@ -102,4 +107,31 @@ export const getTypes = async (Types: TypeInterface[], language: string) => {
   );
 
   return newTypes;
+};
+
+interface PokemonWithTraslate {
+  pokemon: PokemonWithDetailsInterface;
+  lang: string;
+}
+
+export const getPokemonWithTraslate = async ({
+  pokemon,
+  lang,
+}: PokemonWithTraslate) => {
+  const url = pokemon.species.url;
+  const pokemonID = idTaker(url);
+  const language = lang.toLowerCase();
+
+  const types = await getTypes(pokemon.types, language);
+  const abilities = await getAbilities(pokemon.abilities, language);
+  const info = await getPokemonInfo(pokemonID, language);
+
+  const pokemonTraduced = reeplaceTraduction({
+    pokemon,
+    types,
+    abilities,
+    info,
+  });
+
+  return pokemonTraduced;
 };

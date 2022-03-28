@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { SCREEN_MD_MIN } from "../../../Styles/Breakpoints.styles";
+import { SCREEN_MD_MIN } from "../../../Assets/Styles/Breakpoints.styles";
 import {
   MINE_SHAFT,
   NEON_CARROT,
   OUTRAGEOUS_ORANGE,
   WHITE,
-} from "../../../Styles/Colors.styles";
+} from "../../../Assets/Styles/Colors.styles";
 
 export const PokemonListContainer = styled.div`
   position: relative;
@@ -18,6 +18,7 @@ export const PokemonListContainer = styled.div`
   height: 100vh;
   overflow-x: hidden;
   @media screen and (max-width: ${SCREEN_MD_MIN}) {
+    flex-direction: row;
     width: 100%;
     height: 100%;
     justify-content: center;

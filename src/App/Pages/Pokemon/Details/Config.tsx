@@ -9,8 +9,19 @@ import AbilitiesIcon from "../../../Assets/Icons/beaker-check-outline.svg";
 import LangIcon from "../../../Assets/Icons/translate.svg";
 import BackIcon from "../../../Assets/Icons/arrow-left.svg";
 import { LanguageInterface } from "../../../Config/Lang/Lang.language";
+import { PokemonWithDetailsInterface } from "../../../Core/Modules/Pokemon/Interfaces";
 
-export const generateDetailsConfig = ({ language, pokemon, lang }: any) => {
+interface DetailsConfigInterface {
+  language: LanguageInterface;
+  lang: string;
+  pokemon: PokemonWithDetailsInterface;
+}
+
+export const generateDetailsConfig = ({
+  language,
+  pokemon,
+  lang,
+}: DetailsConfigInterface) => {
   const isEnglishLanguage = language.en === lang;
 
   return [
@@ -43,7 +54,15 @@ export const generateDetailsConfig = ({ language, pokemon, lang }: any) => {
   ];
 };
 
-export const generateStatsConfig = ({ language, pokemon }: any) => {
+interface StatsAndAbilitiesInterface {
+  language: LanguageInterface;
+  pokemon: PokemonWithDetailsInterface;
+}
+
+export const generateStatsConfig = ({
+  language,
+  pokemon,
+}: StatsAndAbilitiesInterface) => {
   return [
     {
       title: language.hp,
@@ -72,7 +91,10 @@ export const generateStatsConfig = ({ language, pokemon }: any) => {
   ];
 };
 
-export const generateAbilitiesConfig = ({ language, pokemon }: any) => {
+export const generateAbilitiesConfig = ({
+  language,
+  pokemon,
+}: StatsAndAbilitiesInterface) => {
   return pokemon.abilities.map((item: any) => ({
     title: language.name,
     data: slugToText(item.ability.name),
@@ -85,7 +107,7 @@ export const modes = {
   abilities: "abilities",
 };
 
-interface GenerateModeButtonsInterface {
+interface ModeButtonsInterface {
   language: LanguageInterface;
   onChangeMode: (mode: string) => void;
   mode: string;
@@ -95,7 +117,7 @@ export const generateButtonModes = ({
   language,
   onChangeMode,
   mode,
-}: GenerateModeButtonsInterface) => {
+}: ModeButtonsInterface) => {
   return [
     {
       icon: DetailsIcon,
@@ -121,7 +143,7 @@ export const generateButtonModes = ({
   ];
 };
 
-interface GenerateActionButtonInterface {
+interface ActionButtonInterface {
   language: LanguageInterface;
   lang: string;
   changeLanguage: (lang: string) => void;
@@ -133,7 +155,7 @@ export const generateActionButtons = ({
   lang,
   changeLanguage,
   onBackToPokemonDetails,
-}: GenerateActionButtonInterface) => {
+}: ActionButtonInterface) => {
   return [
     {
       icon: BackIcon,

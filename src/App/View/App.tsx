@@ -2,7 +2,7 @@ import React from "react";
 import Listing from "../Pages/Pokemon/Listing";
 import Details from "../Pages/Pokemon/Details";
 import LanguageProvider from "../HOC/LangProvider";
-import "../Styles/Base.styles.css";
+import "../Assets/Styles/Base.styles.css";
 import { PokemonContext } from "../Core/Contexts/Pokemon.context";
 import PokemonProvider from "../HOC/PokemonProvider";
 

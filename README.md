@@ -23,11 +23,11 @@ npm start
 Se puede ejecutar todos a la vez o de a uno.
 
 ```bash
-npm run test:jest
+npm test
 ```
 
 ```bash
-npm run test:jest PokemonList
+npm test PokemonList
 ```
 
 ### Tecnologias
@@ -42,36 +42,27 @@ npm run test:jest PokemonList
   - React
   - Styled-components
 - Herramientas:
-  - Webpack
   - Babel
-  - Jest
-  - Enzyme
+  - TS-Jest
 
 Url de acceso http://localhost:3000/
 
 ### Estructura de proyecto:
 
-- Assets: Esta es la carpeta donde se situan los iconos y tambien los datos de testing de la aplicacion.
+- Assets: Esta es la carpeta donde se situan los recursos de la aplicacion, como los iconos, los estilos y los datos para testing.
 - Components: En esta carpeta se situan los componentes de la aplicacion.
 - Config: En esta carpeta se situan las configuraciones tanto de la aplicacion en si, como el lenguaje de la aplicacion.
-- Enzyme: En esta carpeta se situa el adaptador de Enzyme para poder usarse en los test, junto con Jest.
+- Core: Es la carpeta donde se concentra el nucleo de la aplicacion, en resumidas palabras, la logica de negocios y los servicios que consume la aplicacion.
 - HOC: En esta carpeta se situan los componentes de alto orden, osea los componentes que modifican el comportamiento global de la aplicacion.
-- Interfaces: En esta carpeta se situan las interfaces de la aplicacion.
-- Services: En esta carpeta se encuentra el servicio de PokeApi.
-- Styles: En esta carpeta se situa tanto el estilo base de la aplicacion como los colores de la misma.
+- Pages: En esta carpeta se situan las paginas de la aplicacion, por modulo.
 - Utils: En esta carpeta se encuentran las utilidades globales, osea funciones que se usan en muchos lugares de la aplicacion y por lo general suelen ser algo "desprolijas".
 - View: En esta carpeta se encuentra el archivo view, que es el que se encarga de ensamblar toda la vista de la aplicacion.
 
 ### Estructura de componentes:
 
-Si bien hay dos tipos de componentes, los componentes compartidos y los componentes que son una vista como PokemonList y PokemonDetails, los componentes suelen tener la siguiente estructura.
-
-- .component: Este es el archivo donde radica la funcionalidad del componente.
-- .content: Este es el archivo que se encarga de renderizar la vista del componente.
-- .config: En este archivo se encuentran configuraciones del componente o de los componentes reutilizables que se utilizan en el mismo, como pueden ser una Tabla o Botones.
-- .interface: En este archivo se encuentran interfaces del componente, tanto de las props que recibe como de los objetos que puede utilizar en el codigo.
-- .utils: En este archivo se situan utilidades/funciones que son necesarias pero pueden ser algo desprolijas y pueden ensuciar el codigo del componente.
-- .service: En este archivo se situan las funciones que van a llamar a la API.
-- .styles: En este archivo se encuentran los componentes estilizados que utiliza nuestro componente.
-- .data: En este archivo se situa los datos que van a ser utilizados en testing.
-- .test: En este archivo se encuentran los tests del componente.
+- Nombre de componente.ts: Este es el archivo que se encarga de renderizar la vista del componente.
+- nombre de componente.styled.ts: En este archivo se encuentran los componentes estilizados que utiliza nuestro componente.
+- nombre de component.test.ts: En este archivo se encuentran los tests del componente.
+- Config.ts: En este archivo se encuentran configuraciones del componente o de los componentes reutilizables que se utilizan en el mismo, como pueden ser una Tabla o Botones.
+- Utils.ts: En este archivo se situan utilidades/funciones que son necesarias pero pueden ser algo desprolijas y pueden ensuciar el codigo del componente.
+- Data.ts: En este archivo se situa los datos que van a ser utilizados en testing.

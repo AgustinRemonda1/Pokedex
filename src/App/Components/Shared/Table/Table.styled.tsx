@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { SCREEN_SM_MIN } from "../../../Styles/Breakpoints.styles";
+import { SCREEN_SM_MIN } from "../../../Assets/Styles/Breakpoints.styles";
 import {
   BLACK,
   BLAZE_ORANGE,
   TEMPTRESS,
   WHITE,
-} from "../../../Styles/Colors.styles";
+} from "../../../Assets/Styles/Colors.styles";
 
 export const TableContainer = styled.div`
   display: flex;
