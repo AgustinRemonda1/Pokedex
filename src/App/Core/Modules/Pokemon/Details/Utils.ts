@@ -24,7 +24,7 @@ const reeplaceTypes = (
   types: TraductionInterface[]
 ) => {
   return pokemonTypes.map((type, index) => ({
-    type: { ...type.type, name: types[index].name },
+    type: { ...type.type, name: types[index] && types[index].name },
   }));
 };
 
@@ -33,7 +33,10 @@ const reeplaceAbilities = (
   abilities: TraductionInterface[]
 ) => {
   return pokemonAbilities.map((ability, index) => ({
-    ability: { ...ability.ability, name: abilities[index].name },
+    ability: {
+      ...ability.ability,
+      name: abilities[index] && abilities[index].name,
+    },
   }));
 };
 
