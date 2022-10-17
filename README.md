@@ -1,68 +1,34 @@
-# Pokedex Challenge
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-### Setup del proyecto:
+## Getting Started
 
-Una vez clonado el proyecto correr los siguientes comandos.
-
-```bash
-npm install
-npm start
-```
-
-### Setup del proyecto:
-
-Una vez clonado el proyecto correr los siguientes comandos.
+First, run the development server:
 
 ```bash
-npm install
-npm start
+npm run dev
+# or
+yarn dev
 ```
 
-### Test del proyecto:
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Se puede ejecutar todos a la vez o de a uno.
+You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-```bash
-npm test
-```
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-```bash
-npm test PokemonList
-```
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-### Tecnologias
+## Learn More
 
----
+To learn more about Next.js, take a look at the following resources:
 
-- Entorno de ejecucion:
-  - Node:
-- Lenguaje:
-  - Typescript
-- Frameworks:
-  - React
-  - Styled-components
-- Herramientas:
-  - Babel
-  - TS-Jest
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-Url de acceso http://localhost:3000/
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-### Estructura de proyecto:
+## Deploy on Vercel
 
-- Assets: Esta es la carpeta donde se situan los recursos de la aplicacion, como los iconos, los estilos y los datos para testing.
-- Components: En esta carpeta se situan los componentes de la aplicacion.
-- Config: En esta carpeta se situan las configuraciones tanto de la aplicacion en si, como el lenguaje de la aplicacion.
-- Core: Es la carpeta donde se concentra el nucleo de la aplicacion, en resumidas palabras, la logica de negocios y los servicios que consume la aplicacion.
-- HOC: En esta carpeta se situan los componentes de alto orden, osea los componentes que modifican el comportamiento global de la aplicacion.
-- Pages: En esta carpeta se situan las paginas de la aplicacion, por modulo.
-- Utils: En esta carpeta se encuentran las utilidades globales, osea funciones que se usan en muchos lugares de la aplicacion y por lo general suelen ser algo "desprolijas".
-- View: En esta carpeta se encuentra el archivo view, que es el que se encarga de ensamblar toda la vista de la aplicacion.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-### Estructura de componentes:
-
-- Nombre de componente.ts: Este es el archivo que se encarga de renderizar la vista del componente.
-- nombre de componente.styled.ts: En este archivo se encuentran los componentes estilizados que utiliza nuestro componente.
-- nombre de component.test.ts: En este archivo se encuentran los tests del componente.
-- Config.ts: En este archivo se encuentran configuraciones del componente o de los componentes reutilizables que se utilizan en el mismo, como pueden ser una Tabla o Botones.
-- Utils.ts: En este archivo se situan utilidades/funciones que son necesarias pero pueden ser algo desprolijas y pueden ensuciar el codigo del componente.
-- Data.ts: En este archivo se situa los datos que van a ser utilizados en testing.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
