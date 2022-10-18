@@ -1,12 +1,10 @@
 import PokeballIcon from "assets/Icons/pokeball.svg";
-import { LanguageInterface } from "config/Lang/Lang.language";
+import { LanguageInterface } from "~/assets/Lang/Lang.language";
 
 interface ConfigWithLangInterface {
   language: LanguageInterface;
   onShowPokemonDetails: (pokemon: number) => void;
 }
-
-console.log(PokeballIcon, "asdawdawd");
 
 export const generateConfigWithLang = ({
   language,

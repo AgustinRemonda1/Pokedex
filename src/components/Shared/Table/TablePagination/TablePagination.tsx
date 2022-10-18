@@ -3,7 +3,7 @@ import {
   TablePaginationContainer,
   TablePaginationButton,
 } from "./TablePagination.styled";
-import { calculatePageNumbers } from "./Utils";
+import { calculatePageNumbers } from "./TablePagination.utils";
 
 export interface TablePaginationProps {
   perPage: number;

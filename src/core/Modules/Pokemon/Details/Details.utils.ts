@@ -2,7 +2,7 @@ import {
   PokemonWithDetailsInterface,
   TypeInterface,
   AbilityInterface,
-} from "../Interfaces";
+} from "../pokemon.types";
 
 interface TraductionInterface {
   name: string;
@@ -12,14 +12,14 @@ interface InfoInterface {
   description: string;
 }
 
-interface ReeplaceTraduction {
+interface ReplaceTraduction {
   pokemon: PokemonWithDetailsInterface;
   abilities: TraductionInterface[];
   types: TraductionInterface[];
   info: InfoInterface;
 }
 
-const reeplaceTypes = (
+const replaceTypes = (
   pokemonTypes: TypeInterface[],
   types: TraductionInterface[]
 ) => {
@@ -28,10 +28,11 @@ const reeplaceTypes = (
   }));
 };
 
-const reeplaceAbilities = (
+const replaceAbilities = (
   pokemonAbilities: AbilityInterface[],
   abilities: TraductionInterface[]
 ) => {
+  console.log(abilities, "ASDASDAS");
   return pokemonAbilities.map((ability, index) => ({
     ability: {
       ...ability.ability,
@@ -40,14 +41,15 @@ const reeplaceAbilities = (
   }));
 };
 
-export const reeplaceTraduction = ({
+export const replaceTraduction = ({
   pokemon,
   abilities,
   types,
   info,
-}: ReeplaceTraduction) => {
-  const pokemonTypesReplaced = reeplaceTypes(pokemon.types, types);
-  const pokemonAbilitiesReplaced = reeplaceAbilities(
+}: ReplaceTraduction) => {
+  console.log(abilities);
+  const pokemonTypesReplaced = replaceTypes(pokemon.types, types);
+  const pokemonAbilitiesReplaced = replaceAbilities(
     pokemon.abilities,
     abilities
   );

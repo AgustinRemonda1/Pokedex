@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import ImageDetails from "./ImageDetails";
-import { pokemonSelected, activeImage } from "./Data";
+import { pokemonSelected, activeImage } from "./ImageDetails.data";
 import { capitalizeStrings } from "utils/FormatStrings.utils";
 
 describe("ImageDetails", () => {

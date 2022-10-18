@@ -35,6 +35,7 @@ interface SpeciesInterface {
 }
 
 export interface PokemonWithDetailsInterface {
+  id: number;
   abilities: AbilityInterface[];
   types: TypeInterface[];
   name: string;

@@ -1,10 +1,10 @@
 import React from "react";
 import { PokemonListContainer, SideGradientLayout } from "./Listing.styled";
-import useLanguage from "core/Hooks/useLanguage";
+import useLanguage from "~/core/Hooks/useLanguage.hook";
 import PokemonHeader from "components/Pokemon/Listing/Header";
 import PokemonFooter from "components/Pokemon/Listing/Footer";
 import PokemonGrid from "components/Pokemon/Listing/Grid";
-import { generateConfigWithLang } from "./Config";
+import { generateConfigWithLang } from "./Listing.config";
 import { useListing } from "core/Modules/Pokemon";
 
 const Listing = () => {

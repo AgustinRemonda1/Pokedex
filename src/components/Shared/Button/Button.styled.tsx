@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { SCREEN_SM_MIN } from "assets/Styles/Breakpoints.styles";
 import { BLACK, BLAZE_ORANGE, WHITE } from "assets/Styles/Colors.styles";
-import { buttonTypes } from "./Config";
+import { buttonTypes } from "./Button.config";
 
 interface TextInterface {
   type?: "small-normal-button" | "button-with-tooltip";

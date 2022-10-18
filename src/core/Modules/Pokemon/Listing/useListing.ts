@@ -2,10 +2,13 @@ import { useState, useCallback, useEffect } from "react";
 import {
   getPokemonList,
   getPokemonListWithDetails,
-} from "core/Services/PokemonList";
-import { PokemonInterface, PokemonWithDetailsInterface } from "../Interfaces";
-import { getPokemonImage } from "./Utils";
-import usePokemon from "core/Hooks/usePokemon";
+} from "~/core/Services/PokemonList.service";
+import {
+  PokemonInterface,
+  PokemonWithDetailsInterface,
+} from "../pokemon.types";
+import { getPokemonImage } from "./Listing.utils";
+import { useRouter } from "next/router";
 
 interface PokemonListStateInterface {
   list: PokemonInterface[];
@@ -36,7 +39,7 @@ const useListing = () => {
     useState<PokemonListStateInterface>(INITIAL_STATE);
   const [pagination, setPagination] =
     useState<PaginationState>(INITIAL_PAGINATION);
-  const { setPokemon } = usePokemon();
+  const router = useRouter();
 
   useEffect(() => {
     const fetchPokemonList = async () => {
@@ -91,7 +94,7 @@ const useListing = () => {
       const { listWithDetails } = pokemonListState;
       const pokemonSelected = listWithDetails[index];
 
-      setPokemon(pokemonSelected);
+      router.replace(`/pokedex/ver-detalles/${pokemonSelected.id}`);
     },
     [pokemonListState]
   );

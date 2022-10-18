@@ -1,10 +1,10 @@
-import callPokeApiService from "./PokeApi";
+import callPokeApiService from "./PokeApi.service";
 import {
   PokemonInterface,
   PokemonWithDetailsInterface,
-} from "../Modules/Pokemon/Interfaces";
+} from "../Modules/Pokemon/pokemon.types";
 import { idTaker } from "utils";
-import { getPokemon } from "./PokemonDetails";
+import { getPokemon } from "./PokemonDetails.service";
 
 const PER_PAGE = 5;
 

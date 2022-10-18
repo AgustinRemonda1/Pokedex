@@ -1,11 +1,11 @@
 import { pokemonListWithDetails } from "assets/Test/Data/Pokemon.data";
-import { language as lang } from "config/Lang/Lang.language";
+import { language as lang } from "assets/Lang/Lang.language";
 import {
   generateButtonModes,
   modes,
   generateAbilitiesConfig,
   generateActionButtons,
-} from "../Config";
+} from "../Details.config";
 import { ButtonProps } from "components/Shared/Button";
 
 const pokemonSelected = pokemonListWithDetails[0];

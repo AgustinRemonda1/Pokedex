@@ -1,6 +1,6 @@
 import React, { FC, useState, useEffect, ReactNode } from "react";
 import { LanguageContext } from "core/Contexts/Language.context";
-import { language, languageOptions } from "config/Lang/Lang.language";
+import { language, languageOptions } from "assets/Lang/Lang.language";
 import { getLocalValue, setLocalValue } from "utils/LocalStorage.utils";
 
 interface LangProviderInterface {

@@ -6,7 +6,7 @@ import {
   DetailsContentProps,
   onBackToPokemonDetails,
   onChangeMode,
-} from "./Data";
+} from "./Content.data";
 
 describe("Content", () => {
   it("show ability button when component its rendered ", async () => {

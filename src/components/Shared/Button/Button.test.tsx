@@ -1,7 +1,11 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import Button from "./Button";
-import { buttonWithTooltip, normalButton, smallNormalButton } from "./Data";
+import {
+  buttonWithTooltip,
+  normalButton,
+  smallNormalButton,
+} from "./Button.data";
 
 describe("Button", () => {
   it("show text in button with tooltip when component its rendered", () => {

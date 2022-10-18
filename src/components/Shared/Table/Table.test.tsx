@@ -1,8 +1,8 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import TableComponent from "./Table";
-import { formatPokemonNumber } from "./Utils";
-import { tableTestProps } from "./Data";
+import { formatPokemonNumber } from "./Table.utils";
+import { tableTestProps } from "./Table.data";
 
 describe("Table", () => {
   it("show Charmander when components its rendered", () => {

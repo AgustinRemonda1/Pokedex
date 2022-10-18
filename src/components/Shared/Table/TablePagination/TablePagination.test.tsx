@@ -1,8 +1,8 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import TablePagination from "./TablePagination";
-import { calculatePageNumbers } from "./Utils";
-import { paginationTestData } from "./Data";
+import { calculatePageNumbers } from "./TablePagination.utils";
+import { paginationTestData } from "./TablePagination.data";
 
 describe("TablePagination", () => {
   it("show first page when component its rendered", () => {

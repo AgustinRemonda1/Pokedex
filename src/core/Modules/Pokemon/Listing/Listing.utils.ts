@@ -1,4 +1,4 @@
-import { PokemonWithDetailsInterface } from "../Interfaces";
+import { PokemonWithDetailsInterface } from "../pokemon.types";
 
 export const getPokemonImage = (
   listWithDetails: PokemonWithDetailsInterface[],

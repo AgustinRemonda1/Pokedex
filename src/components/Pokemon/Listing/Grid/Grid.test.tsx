@@ -5,7 +5,7 @@ import {
   PokemonListWithOutActivePokemonImage,
   PokemonListWithActivePokemonImage,
   activeImage,
-} from "./Data";
+} from "./Grid.data";
 
 describe("Grid", () => {
   it("show charizard when component its rendered ", async () => {

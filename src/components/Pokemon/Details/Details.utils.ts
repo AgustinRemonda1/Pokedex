@@ -2,7 +2,7 @@ import {
   generateDetailsConfig,
   generateStatsConfig,
   generateAbilitiesConfig,
-} from "./Config";
+} from "./Details.config";
 
 export const switchConfigMode = ({ mode, modes, configParams }: any) => {
   switch (mode) {

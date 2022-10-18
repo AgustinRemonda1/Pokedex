@@ -1,5 +1,5 @@
 import React from "react";
-import useLanguage from "core/Hooks/useLanguage";
+import useLanguage from "core/Hooks/useLanguage.hook";
 import {
   PokemonHeader,
   HeaderBackgroundLayout,
@@ -9,6 +9,7 @@ import {
 
 const Header = () => {
   const { language } = useLanguage();
+
   return (
     <PokemonHeader>
       <PokedexTitle>{language.pokedex}</PokedexTitle>

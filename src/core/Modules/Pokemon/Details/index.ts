@@ -1,6 +1,6 @@
 import useDetails from "./useDetails";
-import { reeplaceTraduction } from "./Utils";
+import { replaceTraduction } from "./Details.utils";
 
-export { reeplaceTraduction };
+export { replaceTraduction };
 
 export default useDetails;

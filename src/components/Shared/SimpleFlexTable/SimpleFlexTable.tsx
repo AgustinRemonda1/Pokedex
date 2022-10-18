@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from "react";
-import { FlexTable, FlexRow } from "./SimpleFlexTable.styled";
+import { FlexTable, FlexRow, DataCell } from "./SimpleFlexTable.styled";
 
 export interface FlexTableConfigInterface {
   title: string;
@@ -16,7 +16,7 @@ const SimpleFlexTable: FC<SimpleFlexTableProps> = ({ config }) => {
       {config.map((config: any, index: number) => (
         <FlexRow key={index}>
           <span>{config.title}</span>
-          <span> {config.data}</span>
+          <DataCell> {config.data}</DataCell>
         </FlexRow>
       ))}
     </FlexTable>

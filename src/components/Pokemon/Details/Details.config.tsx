@@ -5,8 +5,8 @@ import StatsIcon from "assets/Icons/chart-box-outline.svg";
 import AbilitiesIcon from "assets/Icons/beaker-check-outline.svg";
 import LangIcon from "assets/Icons/translate.svg";
 import BackIcon from "assets/Icons/arrow-left.svg";
-import { LanguageInterface } from "config/Lang/Lang.language";
-import { PokemonWithDetailsInterface } from "core/Modules/Pokemon/Interfaces";
+import { LanguageInterface } from "~/assets/Lang/Lang.language";
+import { PokemonWithDetailsInterface } from "~/core/Modules/Pokemon/pokemon.types";
 
 interface DetailsConfigInterface {
   language: LanguageInterface;
@@ -21,34 +21,36 @@ export const generateDetailsConfig = ({
 }: DetailsConfigInterface) => {
   const isEnglishLanguage = language.en === lang;
 
-  return [
-    {
-      title: language.name,
-      data: capitalizeStrings(pokemon.name),
-    },
-    {
-      title: language.type,
-      data: pokemon.types.map((item: any, index: number) => (
-        <p key={index}>{item.type.name}</p>
-      )),
-    },
-    {
-      title: language.height,
-      data: isEnglishLanguage
-        ? Math.round(pokemon.height * 3.9)
-        : Math.round(pokemon.height * 10),
-    },
-    {
-      title: language.weight,
-      data: isEnglishLanguage
-        ? Math.round(pokemon.weight / 4.3) + " lbs"
-        : Math.round(pokemon.weight / 10) + " kgs",
-    },
-    {
-      title: language.description,
-      data: pokemon.description,
-    },
-  ];
+  return pokemon
+    ? [
+        {
+          title: language.name,
+          data: capitalizeStrings(pokemon.name),
+        },
+        {
+          title: language.type,
+          data: pokemon.types.map((item, index: number) => (
+            <p key={index}>{item.type.name}</p>
+          )),
+        },
+        {
+          title: language.height,
+          data: isEnglishLanguage
+            ? Math.round(pokemon.height * 3.9)
+            : Math.round(pokemon.height * 10),
+        },
+        {
+          title: language.weight,
+          data: isEnglishLanguage
+            ? Math.round(pokemon.weight / 4.3) + " lbs"
+            : Math.round(pokemon.weight / 10) + " kgs",
+        },
+        {
+          title: language.description,
+          data: pokemon.description,
+        },
+      ]
+    : [];
 };
 
 interface StatsAndAbilitiesInterface {
@@ -60,42 +62,46 @@ export const generateStatsConfig = ({
   language,
   pokemon,
 }: StatsAndAbilitiesInterface) => {
-  return [
-    {
-      title: language.hp,
-      data: pokemon.stats[0].base_stat,
-    },
-    {
-      title: language.attack,
-      data: pokemon.stats[1].base_stat,
-    },
-    {
-      title: language.defense,
-      data: pokemon.stats[2].base_stat,
-    },
-    {
-      title: language.specialAttack,
-      data: pokemon.stats[3].base_stat,
-    },
-    {
-      title: language.specialDefense,
-      data: pokemon.stats[4].base_stat,
-    },
-    {
-      title: language.speed,
-      data: pokemon.stats[5].base_stat,
-    },
-  ];
+  return pokemon
+    ? [
+        {
+          title: language.hp,
+          data: pokemon.stats[0].base_stat,
+        },
+        {
+          title: language.attack,
+          data: pokemon.stats[1].base_stat,
+        },
+        {
+          title: language.defense,
+          data: pokemon.stats[2].base_stat,
+        },
+        {
+          title: language.specialAttack,
+          data: pokemon.stats[3].base_stat,
+        },
+        {
+          title: language.specialDefense,
+          data: pokemon.stats[4].base_stat,
+        },
+        {
+          title: language.speed,
+          data: pokemon.stats[5].base_stat,
+        },
+      ]
+    : [];
 };
 
 export const generateAbilitiesConfig = ({
   language,
   pokemon,
 }: StatsAndAbilitiesInterface) => {
-  return pokemon.abilities.map((item: any) => ({
-    title: language.name,
-    data: slugToText(item.ability.name),
-  }));
+  return pokemon
+    ? pokemon.abilities.map((item) => ({
+        title: language.name,
+        data: slugToText(String(item.ability.name)),
+      }))
+    : [];
 };
 
 export const modes = {

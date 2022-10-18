@@ -2,10 +2,14 @@ import React, { useMemo } from "react";
 import PokemonDetailsContent from "./Content";
 import PokemonImageDetails from "./ImageDetails";
 import { useDetails } from "../../../core/Modules/Pokemon";
-import useLanguage from "../../../core/Hooks/useLanguage";
-import { modes, generateButtonModes, generateActionButtons } from "./Config";
+import useLanguage from "../../../core/Hooks/useLanguage.hook";
+import {
+  modes,
+  generateButtonModes,
+  generateActionButtons,
+} from "./Details.config";
 import { PokemonDetailsContainer } from "./Details.styled";
-import { switchConfigMode } from "./Utils";
+import { switchConfigMode } from "./Details.utils";
 import { ButtonProps } from "components/Shared/Button";
 
 const Details = () => {

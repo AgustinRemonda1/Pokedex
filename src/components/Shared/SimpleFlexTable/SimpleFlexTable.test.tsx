@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import SimpleFlexTable from "./SimpleFlexTable";
-import { configModeDetails } from "./Data";
+import { configModeDetails } from "./SimpleFlexTable.data";
 
 describe("SimpleFlexTable", () => {
   it("show name field when component its rendered", () => {

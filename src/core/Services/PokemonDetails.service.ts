@@ -1,11 +1,11 @@
-import callPokeApiService from "./PokeApi";
+import callPokeApiService from "./PokeApi.service";
 import {
   AbilityInterface,
   PokemonWithDetailsInterface,
   TypeInterface,
-} from "../Modules/Pokemon/Interfaces";
+} from "../Modules/Pokemon/pokemon.types";
 import { idTaker } from "utils";
-import { reeplaceTraduction } from "../Modules/Pokemon/Details";
+import { replaceTraduction } from "../Modules/Pokemon/Details";
 
 interface Data {
   flavor_text_entries: {
@@ -65,7 +65,7 @@ export const getAbility = async (id: string | number, language: string) => {
   const ability = data.names.find(
     (name: any) => name.language.name === language
   );
-
+  console.log(ability, " asdasd sd");
   return ability;
 };
 
@@ -80,7 +80,6 @@ export const getAbilities = async (
   await ids.forEach((id) =>
     getAbility(id, language).then((ability) => newAbilities.push(ability))
   );
-
   return newAbilities;
 };
 
@@ -109,24 +108,24 @@ export const getTypes = async (Types: TypeInterface[], language: string) => {
   return newTypes;
 };
 
-interface PokemonWithTraslate {
+interface PokemonWithTranslate {
   pokemon: PokemonWithDetailsInterface;
   lang: string;
 }
 
-export const getPokemonWithTraslate = async ({
+export const getPokemonWithTranslate = async ({
   pokemon,
   lang,
-}: PokemonWithTraslate) => {
+}: PokemonWithTranslate) => {
   const url = pokemon.species.url;
   const pokemonID = idTaker(url);
   const language = lang.toLowerCase();
 
-  const types = await getTypes(pokemon.types, language);
   const abilities = await getAbilities(pokemon.abilities, language);
+  const types = await getTypes(pokemon.types, language);
   const info = await getPokemonInfo(pokemonID, language);
 
-  const pokemonTraduced = reeplaceTraduction({
+  const pokemonTraduced = replaceTraduction({
     pokemon,
     types,
     abilities,

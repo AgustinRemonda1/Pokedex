@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { PokemonWithDetailsInterface } from "core/Modules/Pokemon/Interfaces";
+import { PokemonWithDetailsInterface } from "~/core/Modules/Pokemon/pokemon.types";
 import { capitalizeStrings } from "utils";
 import { PokemonImageWrapper, PokemonImageHeader } from "./ImageDetails.styled";
 

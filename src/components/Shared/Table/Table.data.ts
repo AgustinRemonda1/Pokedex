@@ -1,5 +1,5 @@
 import { pokemonList } from "assets/Test/Data/Pokemon.data";
-import { language as lang } from "config/Lang/Lang.language";
+import { language as lang } from "assets/Lang/Lang.language";
 import PokeballIcon from "assets/Icons/pokeball.svg";
 
 const language = lang.ES;
@@ -17,7 +17,7 @@ export const tableConfig = [
   {
     name: language.details,
     isAction: true,
-    icon: PokeballIcon,
+    icon: PokeballIcon.src,
     type: "button-with-tooltip",
     onClick,
   },

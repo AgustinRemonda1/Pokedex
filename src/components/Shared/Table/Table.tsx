@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { TableContainer, Table } from "./Table.styled";
-import TablePagination from "../TablePagination/TablePagination";
-import TableData from "./Content/TableData";
+import TablePagination from "./TablePagination/TablePagination";
+import TableData from "./TableData";
 
 export interface TableProps {
   config: any[];
