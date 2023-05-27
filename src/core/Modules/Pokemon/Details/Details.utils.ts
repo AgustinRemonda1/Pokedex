@@ -32,7 +32,6 @@ const replaceAbilities = (
   pokemonAbilities: AbilityInterface[],
   abilities: TraductionInterface[]
 ) => {
-  console.log(abilities, "ASDASDAS");
   return pokemonAbilities.map((ability, index) => ({
     ability: {
       ...ability.ability,
@@ -47,7 +46,6 @@ export const replaceTraduction = ({
   types,
   info,
 }: ReplaceTraduction) => {
-  console.log(abilities);
   const pokemonTypesReplaced = replaceTypes(pokemon.types, types);
   const pokemonAbilitiesReplaced = replaceAbilities(
     pokemon.abilities,
