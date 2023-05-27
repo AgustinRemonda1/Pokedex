@@ -65,7 +65,6 @@ export const getAbility = async (id: string | number, language: string) => {
   const ability = data.names.find(
     (name: any) => name.language.name === language
   );
-  console.log(ability, " asdasd sd");
   return ability;
 };
 
