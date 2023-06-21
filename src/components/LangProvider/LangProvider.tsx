@@ -1,7 +1,7 @@
 import React, { FC, useState, useEffect, ReactNode } from "react";
 import { LanguageContext } from "core/Contexts/Language.context";
 import { language, languageOptions } from "assets/Lang/Lang.language";
-import { getLocalValue, setLocalValue } from "utils/LocalStorage.utils";
+import { getLocalValue, setLocalValue } from "utils";
 
 interface LangProviderInterface {
   children: ReactNode;
@@ -10,7 +10,7 @@ interface LangProviderInterface {
 const LanguageProvider: FC<LangProviderInterface> = ({ children }) => {
   const { ES } = language;
   const [languageProvider, setLanguageProvider] = useState(ES);
-  const [lang, setLang] = useState("");
+  const [lang, setLang] = useState("ES");
 
   useEffect(() => {
     const localLang = getLocalValue("lang");
